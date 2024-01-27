@@ -22,6 +22,7 @@ GameScene::GameScene()
 
 	//CAM->SetTarget(player);
 	//KunaiManager::Get();
+	/////
 }
 
 GameScene::~GameScene()
