@@ -361,7 +361,7 @@ void Player::L001()
 		Pos() = realPos->Pos();
 		SetState(L_101);
 	}
-	if (KEY_DOWN('W'))
+	if (KEY_PRESS('W'))
 	{
 		Pos() = realPos->Pos();
 		GetClip(L_004)->ResetPlayTime();
