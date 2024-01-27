@@ -39,6 +39,7 @@ void GameScene::Update()
 //	RobotManager::Get()->Update();
 //	KunaiManager::Get()->Update();
 //	boss->Update();
+	//
 	player->Update();
 }
 
