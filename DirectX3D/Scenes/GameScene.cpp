@@ -54,6 +54,7 @@ void GameScene::Render()
 	// KunaiManager::Get()->Render();
 	sky->Render();
 	//boss->Render();
+	//
 	ground->Render();
 	player->Render();
 }
