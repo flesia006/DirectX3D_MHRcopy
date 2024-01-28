@@ -557,5 +557,6 @@
   </ItemGroup>
   <ItemGroup>
     <Text Include="메모.txt" />
+    <Text Include="작업일지.txt" />
   </ItemGroup>
 </Project>

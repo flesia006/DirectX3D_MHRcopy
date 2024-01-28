@@ -84,6 +84,7 @@ private:
 	Transform* root = nullptr;
 	Transform* realPos = nullptr;
 	Transform* lastPos = nullptr;
+	Transform* head = nullptr;
 
 	SphereCollider* tmpCollider = nullptr;
 
@@ -112,7 +113,7 @@ private:
 	int kunaiIndex = 0;
 
 
-	int node = 108;
+	int node = 84;
 
 	float camRot;
 	float rad;

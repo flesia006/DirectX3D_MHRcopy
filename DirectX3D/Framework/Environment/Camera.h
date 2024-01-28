@@ -1,5 +1,6 @@
 #pragma once
-
+class Sphere;
+struct Ray;
 class Camera : public Transform
 {
 public:
@@ -31,6 +32,7 @@ private:
     void FollowMode();    
 
     void ThirdPersonMode();
+    void ThirdPresonViewMode();
 
 
     void Frustum();
@@ -52,7 +54,7 @@ private:
     Transform* target = nullptr;    
 
     float distance = 300.0f;
-    float height = 300.0f;
+    float height = 100.0f;
     float moveDamping = 5.0f;
     float rotDamping = 1.0f;
 
@@ -68,4 +70,9 @@ private:
     Matrix rotMatrix;
 
     char file[128] = {};
+
+    SphereCollider* camSphere = nullptr;
+    BoxCollider* ground = nullptr;
+    Ray sight;
+    Transform* sightRot;
 };
