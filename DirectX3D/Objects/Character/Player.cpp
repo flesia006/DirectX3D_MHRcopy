@@ -11,7 +11,7 @@ Player::Player() : ModelAnimator("Player")
 	longSword->SetParent(mainHand);
 	
 	tmpCollider = new SphereCollider();
-	tmpCollider->Scale() *= 10.0f;
+	tmpCollider->Scale() *= 3.0f;
 	tmpCollider->SetParent(head);
 
 	ReadClips();
@@ -33,9 +33,9 @@ void Player::Update()
 	ResetPlayTime();
 
 
-	head->Pos() = GetTranslationByNode(node);
 	mainHand->SetWorld(GetTransformByNode(108));
 	realPos->Pos() = GetTranslationByNode(1);	
+	head->Pos() = realPos->Pos() + Vector3::Up() * 150;
 
 
 	realPos->UpdateWorld();

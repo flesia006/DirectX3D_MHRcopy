@@ -9,8 +9,18 @@ Camera::Camera()
 
     Load();
 
+    camSphere = new SphereCollider(distance);
+    camSphere->SetParent(this);
+    camSphere->UpdateWorld();
+
+    ground = new BoxCollider({ FLT_MAX, 0.1, FLT_MAX });
+    ground->UpdateWorld();
+
     prevMousePos = mousePos;
     prevPos = Pos();
+
+    sight.dir = Vector3::Forward();
+    sightRot = new Transform();
 }
 
 Camera::~Camera()
@@ -26,11 +36,13 @@ void Camera::Update()
     Frustum();
 
     if (target)
-        ThirdPersonMode();
+        //ThirdPersonMode();
+        ThirdPresonViewMode();
     else
         FreeMode();
 
     UpdateWorld();
+    camSphere->UpdateWorld();
 
     view = XMMatrixInverse(nullptr, world);
     viewBuffer->Set(view, world);
@@ -219,32 +231,53 @@ void Camera::ThirdPersonMode()
     //Pos() = Lerp(Pos(), destPos, moveDamping * DELTA);
 
 
-        Vector3 offset = XMVector3TransformCoord(focusOffset, rotMatrix);
-        Vector3 targetPos = target->GlobalPos() + offset;
+//    Vector3 offset = XMVector3TransformCoord(focusOffset, rotMatrix);
+//    Vector3 targetPos = target->GlobalPos() + offset;
+//
+//    Vector3 dir = (targetPos - Pos()).GetNormalized();
+//    forward = Vector3(dir.x, 0.0f, dir.z).GetNormalized();
 
-        Vector3 dir = (targetPos - Pos()).GetNormalized();
-        forward = Vector3(dir.x, 0.0f, dir.z).GetNormalized();
-
-        CAM->Rot().x -= delta.y * rotSpeed * DELTA;
-        CAM->Rot().x = Clamp(-XM_PIDIV2 + 0.01f, XM_PIDIV2 - 0.01f, CAM->Rot().x);
-        CAM->Rot().y += delta.x * rotSpeed * DELTA;
+    CAM->Rot().x -= delta.y * rotSpeed * DELTA;
+    CAM->Rot().x = Clamp(-XM_PIDIV2 + 0.01f, XM_PIDIV2 - 0.01f, CAM->Rot().x);
+    CAM->Rot().y += delta.x * rotSpeed * DELTA;
 
 
-        Pos().z -= distance * 2 * cos(-Rot().x) * cos(Rot().y);
-        Pos().x -= distance * 2 * cos(-Rot().x) * sin(Rot().y);
-        
-        Pos().y -= distance * 2 * sin(-Rot().x) - height / 2;
-        if (Pos().y <= 0)
-        {
-            Pos().y = 0;
-            dir = (targetPos - Pos()).GetNormalized();
-            forward = Vector3(dir.x, 0.0f, dir.z).GetNormalized();
+    Pos().z -= distance * 2 * cos(-Rot().x) * cos(Rot().y);
+    Pos().x -= distance * 2 * cos(-Rot().x) * sin(Rot().y);
+    
+    Pos().y -= distance * 2 * sin(-Rot().x) - height / 2;
 
-            CAM->Rot().x -= delta.y * rotSpeed * DELTA;
-            CAM->Rot().x = Clamp(-XM_PIDIV2 + 0.01f, XM_PIDIV2 - 0.01f, CAM->Rot().x);
-            CAM->Rot().y += delta.x * rotSpeed * DELTA;
-        }
+}
 
+void Camera::ThirdPresonViewMode()
+// 머리 주위의 가상의 구체로 광선을 쏘고 그 구체에 맞은 지점을 카메라 위치로 지정하는 방식
+// 이후에 terrain 이나 월드의 여러 오브젝트에도 광선을 쏘아 카메라 위치를 정하면
+// 지하로 들어가거나 물건을 통과하는 등의 상황을 방지할 수 있을 듯
+{
+    Vector3 delta = mousePos - prevMousePos;
+    prevMousePos = mousePos;    
+    
+    sightRot->Rot().x -= delta.y * rotSpeed * DELTA;
+    sightRot->Rot().x = Clamp(-XM_PIDIV2 + 0.01f, XM_PIDIV2 - 0.01f, sightRot->Rot().x);
+    sightRot->Rot().y += delta.x * rotSpeed * DELTA;
+    sightRot->UpdateWorld();
+
+    CAM->Rot() = sightRot->Rot();
+    CAM->Pos() = target->GlobalPos() + sightRot->Back() * distance * 1.6;
+
+    // 만약 카메라가 지면을 파고든다? (##임시## Terrain 만들면 그에 맞게 수정)
+
+    sight.dir = sightRot->Back();
+    sight.pos = target->GlobalPos();
+
+    Contact contact;
+
+    bool hitGround = ground->IsRayCollision(sight, &contact);
+
+    if ((target->GlobalPos() - contact.hitPoint).Length() > distance || !hitGround)
+        return;
+    
+    CAM->Pos() = contact.hitPoint - sight.dir.Back() * 5;
 }
 
 void Camera::Frustum()
