@@ -250,9 +250,9 @@ void Camera::ThirdPersonMode()
 }
 
 void Camera::ThirdPresonViewMode()
-// 머리 주위의 가상의 구체로 광선을 쏘고 그 구체에 맞은 지점을 카메라 위치로 지정하는 방식
+// 시선 반대 방향으로 광선을 쏘고 맞은 지점을 카메라 위치로 지정하는 방식
 // 이후에 terrain 이나 월드의 여러 오브젝트에도 광선을 쏘아 카메라 위치를 정하면
-// 지하로 들어가거나 물건을 통과하는 등의 상황을 방지할 수 있을 듯
+// 지하로 들어가거나 물건을 통과하는 등의 상황을 방지할 수 있음
 {
     Vector3 delta = mousePos - prevMousePos;
     prevMousePos = mousePos;    
@@ -265,18 +265,23 @@ void Camera::ThirdPresonViewMode()
     CAM->Rot() = sightRot->Rot();
     CAM->Pos() = target->GlobalPos() + sightRot->Back() * distance * 1.6;
 
-    // 만약 카메라가 지면을 파고든다? (##임시## Terrain 만들면 그에 맞게 수정)
+    // 만약 카메라가 지면을 파고든다? (TODO : Terrain 만들면 그에 맞게 수정)
 
+    // 1. 광선(뒤통수의 시선) 만들기
     sight.dir = sightRot->Back();
     sight.pos = target->GlobalPos();
 
+    // 2. 땅과 contact 받아오기
     Contact contact;
-
     bool hitGround = ground->IsRayCollision(sight, &contact);
 
+    // 3. 광선이 지면에 닿지 않았거나 camSphere 의 반지름보다 먼 거리에서 hit 되었다면 그냥 리턴
     if ((target->GlobalPos() - contact.hitPoint).Length() > distance || !hitGround)
         return;
     
+    // 4. Cam 위치를 광선과 땅이 만난 지점으로, 
+    //    대신 카메라가 너무 땅에 딱붙어 있으면 어색하니까 살짝 보정 
+
     CAM->Pos() = contact.hitPoint - sight.dir.Back() * 5;
 }
 
