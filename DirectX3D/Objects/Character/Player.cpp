@@ -100,6 +100,7 @@ void Player::Control()
 {
 	switch (curState)
 	{
+					// 이동 모션
 	case Player::L_001:
 		L001();
 		break;
@@ -118,10 +119,12 @@ void Player::Control()
 	case Player::L_007:
 		break;
 	case Player::L_008:
+		L008();
 		break;
 	case Player::L_009:
 		break;
 	case Player::L_010:
+		L010();
 		break;
 	case Player::L_011:
 		break;
@@ -145,7 +148,8 @@ void Player::Control()
 		break;
 	case Player::L_079:
 		break;
-	case Player::L_101:
+					// 공격 모션
+	case Player::L_101: 
 		L101();
 		break;
 	case Player::L_102:
@@ -213,7 +217,7 @@ void Player::Move()
 
 	if (KEY_PRESS('W'))
 	{
-		velocity.z += DELTA; // 속도(범용변수)에 델타만큼 전후값 주기
+		velocity.z = 1;//+= DELTA; // 속도(범용변수)에 델타만큼 전후값 주기		
 		isMoveZ = true; //전후 이동 수행 중
 	}
 
@@ -356,17 +360,22 @@ void Player::L001()
 	if (GetClip(L_001)->isFirstPlay())
 		PlayClip(L_001);
 
+	if (KEY_DOWN('W'))
+		SetState(L_005);
+
 	if (KEY_DOWN(VK_LBUTTON))
 	{
 		Pos() = realPos->Pos();
 		SetState(L_101);
 	}
-	if (KEY_PRESS('W'))
-	{
-		Pos() = realPos->Pos();
-		GetClip(L_004)->ResetPlayTime();
-		SetState(L_004);
-	}
+	//if (KEY_PRESS('W'))
+	//{
+	//	Pos() = realPos->Pos();
+	//	GetClip(L_004)->ResetPlayTime();
+	//	SetState(L_004);
+	//}
+	if (KEY_DOWN(VK_SPACE))
+		SetState(L_010);
 }
 
 void Player::L002()
@@ -413,10 +422,50 @@ void Player::L004()
 		GetClip(L_004)->SetPlayTime(-100.3f);
 	}
 
+	if (KEY_UP('W'))
+	{
+		SetState(L_008);
+		return;
+	}
+
+	if (KEY_DOWN(VK_SPACE))
+		SetState(L_010);
 }
 
 void Player::L005()
 {
+	if (GetClip(L_005)->isFirstPlay())
+		PlayClip(L_005);
+
+	Rotate();
+
+	if (GetClip(L_004)->GetRatio() > 0.94)
+	{
+		//		Pos() += Back() * loopApply;
+		//		lastPos->Pos() = Pos();
+		//		CAM->SetTarget(lastPos);
+		GetClip(L_004)->SetPlayTime(-100.3f);
+			SetState(L_004);
+	}
+	if (GetClip(L_005)->GetRatio() > 0.94 && KEY_PRESS('W'))
+	{
+		Pos() = realPos->Pos();
+		SetState(L_004);
+	}
+	else if (GetClip(L_005)->GetRatio() > 0.94)
+	{
+		Pos() = realPos->Pos();
+		ReturnIdle();
+	}
+
+	if (KEY_UP('W'))
+	{
+		Pos() = realPos->Pos();
+		SetState(L_008);
+	}
+
+	if (KEY_DOWN(VK_SPACE))
+		SetState(L_010);
 }
 
 void Player::L006()
@@ -429,6 +478,41 @@ void Player::L007()
 
 void Player::L008()
 {
+	if (GetClip(L_008)->isFirstPlay())
+		PlayClip(L_008);
+
+	Rotate();
+
+	if (GetClip(L_008)->GetRatio() > 0.94)
+	{
+		GetClip(L_008)->SetPlayTime(-100.3f);
+		Pos() = realPos->Pos();
+		ReturnIdle();
+		SetState(L_001);
+	}
+
+	if (KEY_DOWN(VK_SPACE))
+		SetState(L_010);
+}
+
+void Player::L009()
+{
+}
+
+void Player::L010()
+{
+	if (GetClip(L_010)->isFirstPlay())
+		PlayClip(L_010);
+
+	//Rotate();
+
+	if (GetClip(L_010)->GetRatio() > 0.94)
+	{
+		GetClip(L_010)->SetPlayTime(-100.3f);
+		Pos() = realPos->Pos();
+		ReturnIdle();
+		SetState(L_001);
+	}
 }
 
 void Player::L101()
@@ -448,7 +532,7 @@ void Player::L101()
 	// 해당 클립이 60% 이상 재생됐으면 if 조건 충족
 	if (GetClip(L_101)->GetRatio() > 0.6)
 	{
-		if(KEY_FRONT(Keyboard::LMB))
+		if (KEY_FRONT(Keyboard::LMB))
 		{
 			Pos() = realPos->Pos();
 			SetState(L_102);
@@ -462,6 +546,11 @@ void Player::L101()
 		{
 			Pos() = realPos->Pos();
 			SetState(L_103);
+		}
+		else if (KEY_DOWN(VK_SPACE))
+		{
+			Pos() = realPos->Pos();
+			SetState(L_010);
 		}
 	}
 
@@ -500,6 +589,11 @@ void Player::L102()
 			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
+		else if (KEY_DOWN(VK_SPACE))
+		{
+			Pos() = realPos->Pos();
+			SetState(L_010);
+		}
 	}
 
 	if (GetClip(L_102)->GetRatio() > 0.98)
@@ -525,6 +619,11 @@ void Player::L103()
 		{
 			Pos() = realPos->Pos();
 			SetState(L_104);
+		}
+		else if (KEY_DOWN(VK_SPACE))
+		{
+			Pos() = realPos->Pos();
+			SetState(L_010);
 		}
 	}
 
@@ -555,6 +654,11 @@ void Player::L104()
 		{
 			Pos() = realPos->Pos();
 			SetState(L_103);
+		}
+		else if (KEY_DOWN(VK_SPACE))
+		{
+			Pos() = realPos->Pos();
+			SetState(L_010);
 		}
 	}
 
@@ -589,6 +693,11 @@ void Player::L105() // 배어올리기
 			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
+		else if (KEY_DOWN(VK_SPACE))
+		{
+			Pos() = realPos->Pos();
+			SetState(L_010);
+		}
 
 	}
 
@@ -622,6 +731,11 @@ void Player::L106() // 기인 베기 1
 		{
 			Pos() = realPos->Pos();
 			SetState(L_107);
+		}
+		else if (KEY_DOWN(VK_SPACE))
+		{
+			Pos() = realPos->Pos();
+			SetState(L_010);
 		}
 	}
 

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
   
   compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Collider.cso
@@ -554,3 +555,7 @@ ImGui.lib(imgui_impl_dx11.obj) : warning LNK4099: '' PDB를 'ImGui.lib(imgui_imp
 ImGui.lib(imgui_tables.obj) : warning LNK4099: '' PDB를 'ImGui.lib(imgui_tables.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
      C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.lib 라이브러리 및 C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exp 개체를 생성하고 있습니다.
   DirectX3D.vcxproj -> C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exe
+=======
+﻿  Player.cpp
+  DirectX3D.vcxproj -> C:\Users\JU\Source\Repos\flesia006\DirectX3D_MHRcopy\x64\Debug\DirectX3D.exe
+>>>>>>> 7760d76f8e221ae40fe2aaa0c0609ef6ce492a41
