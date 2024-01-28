@@ -3,8 +3,6 @@
 Naruto::Naruto() : ModelAnimator("naruto")
 {	
 
-
-
 	mainHand = new Transform();
 	tmpCollider = new SphereCollider();
 	tmpCollider->Scale() *= 10.1f;
