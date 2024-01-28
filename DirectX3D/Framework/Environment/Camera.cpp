@@ -227,13 +227,23 @@ void Camera::ThirdPersonMode()
 
         CAM->Rot().x -= delta.y * rotSpeed * DELTA;
         CAM->Rot().x = Clamp(-XM_PIDIV2 + 0.01f, XM_PIDIV2 - 0.01f, CAM->Rot().x);
-
         CAM->Rot().y += delta.x * rotSpeed * DELTA;
 
 
         Pos().z -= distance * 2 * cos(-Rot().x) * cos(Rot().y);
         Pos().x -= distance * 2 * cos(-Rot().x) * sin(Rot().y);
+        
         Pos().y -= distance * 2 * sin(-Rot().x) - height / 2;
+        if (Pos().y <= 0)
+        {
+            Pos().y = 0;
+            dir = (targetPos - Pos()).GetNormalized();
+            forward = Vector3(dir.x, 0.0f, dir.z).GetNormalized();
+
+            CAM->Rot().x -= delta.y * rotSpeed * DELTA;
+            CAM->Rot().x = Clamp(-XM_PIDIV2 + 0.01f, XM_PIDIV2 - 0.01f, CAM->Rot().x);
+            CAM->Rot().y += delta.x * rotSpeed * DELTA;
+        }
 
 }
 

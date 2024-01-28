@@ -52,7 +52,7 @@ private:
     Transform* target = nullptr;    
 
     float distance = 300.0f;
-    float height = 300.0f;
+    float height = 100.0f;
     float moveDamping = 5.0f;
     float rotDamping = 1.0f;
 

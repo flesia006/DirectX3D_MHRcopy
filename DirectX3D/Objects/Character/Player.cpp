@@ -4,26 +4,25 @@
 Player::Player() : ModelAnimator("Player")
 {
 	mainHand = new Transform();
-	root = new Transform();
+	head = new Transform();
 	realPos = new Transform();
 	lastPos = new Transform();
 	longSword = new Model("longSwd");
 	longSword->SetParent(mainHand);
 	
 	tmpCollider = new SphereCollider();
-	tmpCollider->Scale() *= 5.0f;
-	tmpCollider->SetParent(root);
+	tmpCollider->Scale() *= 10.0f;
+	tmpCollider->SetParent(head);
 
 	ReadClips();
 
-
-	CAM->SetTarget(realPos);
+	CAM->SetTarget(head);
 }
 
 Player::~Player()
 {
 	delete mainHand;
-	delete root;
+	delete head;
 	delete realPos;
 	delete tmpCollider;
 }
@@ -34,15 +33,16 @@ void Player::Update()
 	ResetPlayTime();
 
 
-	root->SetWorld(GetTransformByNode(1));
-	mainHand->SetWorld(GetTransformByNode(node));
+	head->Pos() = GetTranslationByNode(node);
+	mainHand->SetWorld(GetTransformByNode(108));
 	realPos->Pos() = GetTranslationByNode(1);	
+
 
 	realPos->UpdateWorld();
 	lastPos->UpdateWorld();
 	ModelAnimator::Update();
 	longSword->UpdateWorld();
-
+	head->UpdateWorld();
 	tmpCollider->UpdateWorld();
 }
 
@@ -67,7 +67,7 @@ void Player::GUIRender()
 	ImGui::SliderInt("keyboard", &U, 0, 200);
 
 
-	ImGui::SliderInt("loopApply", &loopApply, 100, 400);
+	ImGui::SliderInt("node", &node, 0, 100);
 
 
 	longSword->GUIRender();
@@ -398,20 +398,6 @@ void Player::L004()
 	// 106 기인 베기
 	{
 
-	////////////////////////////////////////////////
-		////////////////////////////////////////////////
-		////////////////////////////////////////////////
-		// ////aaaaaaaaaaaaaaaaaaaaaaaaaaa/////////
-		// ////aaaaaaaaaaaaaaaaaaaaaaaaaaa/////////
-		///////aaaaaaaaaaaaaaaaaaaaaaaaaaa//////
-		// ////////////////////////////////////////////////
-
-		// ////////////////////////////////////////////////
-		// ////////bbbbbbbbbbbbbbbbbbbbbbbb/////////////////
-		///////////bbbbbbbbbbbbbbbbbbbbbbbb//////////////
-		///////////bbbbbbbbbbbbbbbbbbbbbbbb//////////////
-		///////////bbbbbbbbbbbbbbbbbbbbbbbb//////////////
-		////////////////////////////////////////////////
 	}
 
 	// 이동 : 
