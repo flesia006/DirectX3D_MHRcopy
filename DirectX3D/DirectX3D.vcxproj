@@ -193,13 +193,9 @@
     <ClInclude Include="Framework\Utilities\Timer.h" />
     <ClInclude Include="Framework\Utilities\tinyxml2.h" />
     <ClInclude Include="Framework\Utilities\Utility.h" />
-    <ClInclude Include="Objects\Manager\KunaiManager.h" />
-    <ClInclude Include="Objects\Character\Item\Kunai.h" />
     <ClInclude Include="Objects\Character\Player.h" />
     <ClInclude Include="Framework\Render\RenderTarget.h" />
     <ClInclude Include="Scenes\GameScene.h" />
-    <ClInclude Include="Objects\Character\Naruto.h" />
-    <ClInclude Include="Objects\Character\Human.h" />
     <ClInclude Include="Manager\GameManager.h" />
     <ClInclude Include="Manager\SceneManager.h" />
     <ClInclude Include="Objects\Actor\ActorUI.h" />
@@ -212,21 +208,9 @@
     <ClInclude Include="Objects\Landscape\TerrainEditor.h" />
     <ClInclude Include="Objects\Manager\BlockManager.h" />
     <ClInclude Include="Resource.h" />
-    <ClInclude Include="Objects\Character\Robot.h" />
-    <ClInclude Include="Objects\Manager\RobotManager.h" />
-    <ClInclude Include="Scenes\CollisionScene.h" />
-    <ClInclude Include="Scenes\CubeScene.h" />
-    <ClInclude Include="Scenes\GridScene.h" />
-    <ClInclude Include="Scenes\IntancingScene.h" />
-    <ClInclude Include="Scenes\LightScene.h" />
-    <ClInclude Include="Scenes\ModelAnimationScene.h" />
-    <ClInclude Include="Scenes\ModelExportScene.h" />
-    <ClInclude Include="Scenes\ModelRenderScene.h" />
-    <ClInclude Include="Scenes\Scene.h" />
-    <ClInclude Include="Scenes\SphereScene.h" />
-    <ClInclude Include="Scenes\TerrainEditorScene.h" />
-    <ClInclude Include="Scenes\TerrainScene.h" />
     <ClInclude Include="Objects\Landscape\SkyBox.h" />
+    <ClInclude Include="Scenes\ModelExportScene.h" />
+    <ClInclude Include="Scenes\Scene.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -276,13 +260,9 @@
     <ClCompile Include="Framework\Utilities\Timer.cpp" />
     <ClCompile Include="Framework\Utilities\tinyxml2.cpp" />
     <ClCompile Include="Framework\Utilities\Utility.cpp" />
-    <ClCompile Include="Objects\Manager\KunaiManager.cpp" />
-    <ClCompile Include="Objects\Character\Item\Kunai.cpp" />
     <ClCompile Include="Objects\Character\Player.cpp" />
     <ClCompile Include="Framework\Render\RenderTarget.cpp" />
     <ClCompile Include="Scenes\GameScene.cpp" />
-    <ClCompile Include="Objects\Character\Naruto.cpp" />
-    <ClCompile Include="Objects\Character\Human.cpp" />
     <ClCompile Include="Manager\GameManager.cpp" />
     <ClCompile Include="Manager\SceneManager.cpp" />
     <ClCompile Include="Objects\Actor\ActorUI.cpp" />
@@ -294,20 +274,8 @@
     <ClCompile Include="Objects\Landscape\Terrain.cpp" />
     <ClCompile Include="Objects\Landscape\TerrainEditor.cpp" />
     <ClCompile Include="Objects\Manager\BlockManager.cpp" />
-    <ClCompile Include="Objects\Character\Robot.cpp" />
-    <ClCompile Include="Objects\Manager\RobotManager.cpp" />
-    <ClCompile Include="Scenes\CollisionScene.cpp" />
-    <ClCompile Include="Scenes\CubeScene.cpp" />
-    <ClCompile Include="Scenes\GridScene.cpp" />
-    <ClCompile Include="Scenes\IntancingScene.cpp" />
-    <ClCompile Include="Scenes\LightScene.cpp" />
-    <ClCompile Include="Scenes\ModelAnimationScene.cpp" />
-    <ClCompile Include="Scenes\ModelExportScene.cpp" />
-    <ClCompile Include="Scenes\ModelRenderScene.cpp" />
-    <ClCompile Include="Scenes\SphereScene.cpp" />
-    <ClCompile Include="Scenes\TerrainEditorScene.cpp" />
-    <ClCompile Include="Scenes\TerrainScene.cpp" />
     <ClCompile Include="Objects\Landscape\SkyBox.cpp" />
+    <ClCompile Include="Scenes\ModelExportScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DirectX3D.rc" />

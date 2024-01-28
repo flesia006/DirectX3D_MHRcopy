@@ -15,15 +15,24 @@ public:
 private:
 
 private:
-    Naruto* naruto = nullptr;  
     Player* player = nullptr;
     ModelAnimator* boss = nullptr;
 
     Model* ground = nullptr;
     SkyBox* sky = nullptr;
 
-
-
-
+    Quad* clockFrame;
+    Quad* durability;
+    Quad* durability_gauge;
+    Quad* hpBar;
+    Quad* idBar;
+    Quad* itemSlot;
+    Quad* lsCoting;
+    Quad* lsCoting2;
+    Quad* lsGauge;
+    Quad* lsGauge2;
+    Quad* quickSlot;
+    Quad* slingerBug;
+    Quad* staminarBar;
 };
 

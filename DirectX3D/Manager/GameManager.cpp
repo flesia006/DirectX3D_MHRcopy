@@ -1,14 +1,5 @@
 #include "Framework.h"
 
-#include "Scenes/CubeScene.h"
-#include "Scenes/GridScene.h"
-#include "Scenes/SphereScene.h"
-#include "Scenes/TerrainEditorScene.h"
-#include "Scenes/CollisionScene.h"
-#include "Scenes/ModelExportScene.h"
-#include "Scenes/ModelRenderScene.h"
-#include "Scenes/ModelAnimationScene.h"
-#include "Scenes/IntancingScene.h"
 #include "Scenes/GameScene.h"
 
 // °úÁ¦
@@ -35,9 +26,7 @@ GameManager::GameManager()
     //SceneManager::Get()->Create("Instancing", new IntancingScene());
     SceneManager::Get()->Create("game", new GameScene());
 
-    SceneManager::Get()->Add("Grid");
-    SceneManager::Get()->Add("ModelExport");
-    SceneManager::Get()->Add("Instancing");
+    //SceneManager::Get()->Add("ModelExport");
     SceneManager::Get()->Add("game");
 }
 
