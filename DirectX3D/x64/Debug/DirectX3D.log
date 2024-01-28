@@ -1,91 +1,4 @@
-<<<<<<< HEAD
-﻿C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Collider.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Texture.cso
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Grid.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Compute\ByteAddress.hlsl(14,7-59): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\ByteAddress.cso
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\ComputePicking.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Particle.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Billboard.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Rain.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Snow.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Spark.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Sprite.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Skybox.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Landscape\Terrain.hlsl(10,2-29): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Terrain.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Landscape\TerrainEditor.hlsl(23,2-29): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\TerrainEditor.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Light\AnimGBuffer.hlsl(12,2-29): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\AnimGBuffer.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Light\Deferred.hlsl(97,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Deferred.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\DepthMap.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Light\GBuffer.hlsl(10,2-29): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\GBuffer.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Light\Light.hlsl(18,2-29): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Light.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Light\Shadow.hlsl(40,2-29): warning X3206: implicit truncation of vector type
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Light\Shadow.hlsl(73,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Shadow.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Model\ModelAnimation.hlsl(12,2-29): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\ModelAnimation.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Model\ModelAnimationInstancing.hlsl(12,2-29): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\ModelAnimationInstancing.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Model\ModelInstancing.hlsl(10,2-29): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\ModelInstancing.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Bloom.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\Effect\Fog.hlsl(18,2-29): warning X3206: implicit truncation of vector type
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\Fog.cso
-C:\CWY\MHR_Portfolio\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
-  
-  compilation object save succeeded; see C:\CWY\MHR_Portfolio\x64\Debug\ProgressBar.cso
-  Framework.cpp
+﻿  Framework.cpp
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Math\Vector2.h(10,29): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Math\Vector2.h(10,41): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Texture.h(14,70): warning C4244: '인수': 'const size_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -103,7 +16,6 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
           ]
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Keyboard.h(33,13): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<Keyboard::Inputs,float>::pair<Keyboard::Inputs,int,0>(std::pair<Keyboard::Inputs,int> &&) noexcept'에 대한 참조를 확인하세요.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Keyboard.h(33,38): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<Keyboard::Inputs,float>::pair<Keyboard::Inputs,int,0>(std::pair<Keyboard::Inputs,int> &&) noexcept'에 대한 참조를 확인하세요.
-  DepthStencil.cpp
   DirectX3D.cpp
   ConstBuffer.cpp
   IndexBuffer.cpp
@@ -144,6 +56,9 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Environment\Environment.cpp(110,22): wa
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Environment\Environment.cpp(111,23): warning C4244: '=': 'UINT'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   GameMath.cpp
   Transform.cpp
+  Model.cpp
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\Model.cpp(58,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\Model.cpp(81,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   ModelAnimator.cpp
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimator.cpp(69,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimator.cpp(141,34): warning C4267: '초기화 중': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -195,10 +110,9 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '�
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(72,1): message : 클래스 템플릿 멤버 함수 'void Mesh<ModelVertex>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelMesh.cpp(34,21): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<ModelVertex>::CreateMesh(void)'에 대한 참조를 확인하세요.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Model.cpp
-C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\Model.cpp(58,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\Model.cpp(81,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  DepthStencil.cpp
   Material.cpp
+  RenderTarget.cpp
   Texture.cpp
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Texture.cpp(24,38): warning C4267: '초기화 중': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   ComputeShader.cpp
@@ -226,11 +140,10 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Font.cpp(130,30): warning C42
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Font.cpp(135,79): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Font.cpp(137,88): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Keyboard.cpp
-  Observer.cpp
   코드를 생성하고 있습니다...
   컴파일하고 있습니다...
+  Observer.cpp
   Timer.cpp
-  tinyxml2.cpp
   Utility.cpp
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xstring(2857,53): warning C4244: '인수': 'wchar_t'에서 'const _Elem'(으)로 변환하면서 데이터가 손실될 수 있습니다.
           with
@@ -277,14 +190,7 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Utility.cpp(6,16): message : 
               _Elem=wchar_t,
               _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>
           ]
-  KunaiManager.cpp
-C:\CWY\MHR_Portfolio\DirectX3D\Objects\Manager\KunaiManager.cpp(9,2): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-  Kunai.cpp
-  Player.cpp
-  RenderTarget.cpp
-  GameScene.cpp
-  Naruto.cpp
-  Human.cpp
+  tinyxml2.cpp
   GameManager.cpp
   SceneManager.cpp
   ActorUI.cpp
@@ -422,6 +328,12 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '�
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(72,1): message : 클래스 템플릿 멤버 함수 'void Mesh<Sphere::VertexType>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Basic\Sphere.cpp(11,21): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Sphere::VertexType>::CreateMesh(void)'에 대한 참조를 확인하세요.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Human.cpp
+  Kunai.cpp
+  Naruto.cpp
+  Player.cpp
+  Robot.cpp
+  SkyBox.cpp
   Terrain.cpp
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Landscape\Terrain.cpp(42,20): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Landscape\Terrain.cpp(43,20): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
@@ -460,11 +372,13 @@ C:\CWY\MHR_Portfolio\DirectX3D\Objects\Landscape\TerrainEditor.cpp(339,22): mess
   컴파일하고 있습니다...
   BlockManager.cpp
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Manager\BlockManager.cpp(39,62): warning C4267: '인수': 'size_t'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  Robot.cpp
+  KunaiManager.cpp
+C:\CWY\MHR_Portfolio\DirectX3D\Objects\Manager\KunaiManager.cpp(9,2): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   RobotManager.cpp
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Manager\RobotManager.cpp(16,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
   CollisionScene.cpp
   CubeScene.cpp
+  GameScene.cpp
   GridScene.cpp
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(40,1): message : 클래스 템플릿 멤버 함수 'void Mesh<VertexColor>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
@@ -531,7 +445,6 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
   SphereScene.cpp
   TerrainEditorScene.cpp
   TerrainScene.cpp
-  SkyBox.cpp
   코드를 생성하고 있습니다...
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Math\Vector3.h(93): warning C4715: 'Vector3::operator[]': 모든 제어 경로에서 값을 반환하지는 않습니다.
 DirectXTex.lib(DirectXTexWIC.obj) : warning LNK4099: '' PDB를 'DirectXTex.lib(DirectXTexWIC.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
@@ -555,7 +468,3 @@ ImGui.lib(imgui_impl_dx11.obj) : warning LNK4099: '' PDB를 'ImGui.lib(imgui_imp
 ImGui.lib(imgui_tables.obj) : warning LNK4099: '' PDB를 'ImGui.lib(imgui_tables.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
      C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.lib 라이브러리 및 C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exp 개체를 생성하고 있습니다.
   DirectX3D.vcxproj -> C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exe
-=======
-﻿  Player.cpp
-  DirectX3D.vcxproj -> C:\Users\JU\Source\Repos\flesia006\DirectX3D_MHRcopy\x64\Debug\DirectX3D.exe
->>>>>>> 7760d76f8e221ae40fe2aaa0c0609ef6ce492a41
