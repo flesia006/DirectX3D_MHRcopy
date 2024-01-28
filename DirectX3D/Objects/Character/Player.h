@@ -66,6 +66,8 @@ private:
 	void L006();
 	void L007();
 	void L008();
+	void L009();
+	void L010();
 
 	void L101();
 	void L102();
