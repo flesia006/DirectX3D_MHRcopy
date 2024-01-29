@@ -288,6 +288,7 @@ void Player::SetState(State state)
 	if (curState == state)
 		return;
 
+	Pos() = realPos->Pos();
 	preState = curState;
 	curState = state;
 //	PlayClip(state);
@@ -360,20 +361,12 @@ void Player::L001()
 	if (GetClip(L_001)->isFirstPlay())
 		PlayClip(L_001);
 
-	if (KEY_DOWN('W'))
+	if (KEY_PRESS('W'))
 		SetState(L_005);
 
 	if (KEY_DOWN(VK_LBUTTON))
-	{
-		Pos() = realPos->Pos();
 		SetState(L_101);
-	}
-	//if (KEY_PRESS('W'))
-	//{
-	//	Pos() = realPos->Pos();
-	//	GetClip(L_004)->ResetPlayTime();
-	//	SetState(L_004);
-	//}
+
 	if (KEY_DOWN(VK_SPACE))
 		SetState(L_010);
 }
@@ -416,9 +409,6 @@ void Player::L004()
 
 	if (GetClip(L_004)->GetRatio() > 0.94)
 	{
-//		Pos() += Back() * loopApply;
-//		lastPos->Pos() = Pos();
-//		CAM->SetTarget(lastPos);
 		GetClip(L_004)->SetPlayTime(-100.3f);
 	}
 
@@ -441,15 +431,10 @@ void Player::L005()
 
 	if (GetClip(L_004)->GetRatio() > 0.94)
 	{
-		//		Pos() += Back() * loopApply;
-		//		lastPos->Pos() = Pos();
-		//		CAM->SetTarget(lastPos);
-		GetClip(L_004)->SetPlayTime(-100.3f);
 			SetState(L_004);
 	}
 	if (GetClip(L_005)->GetRatio() > 0.94 && KEY_PRESS('W'))
 	{
-		Pos() = realPos->Pos();
 		SetState(L_004);
 	}
 	else if (GetClip(L_005)->GetRatio() > 0.94)
@@ -460,7 +445,6 @@ void Player::L005()
 
 	if (KEY_UP('W'))
 	{
-		Pos() = realPos->Pos();
 		SetState(L_008);
 	}
 
@@ -483,16 +467,25 @@ void Player::L008()
 
 	Rotate();
 
+	if (GetClip(L_008)->GetRatio() > 0.5 && GetClip(L_008)->GetRatio() <= 0.94)
+	{
+		if (KEY_PRESS('W'))
+		{
+			SetState(L_005);
+		}
+	}
+
 	if (GetClip(L_008)->GetRatio() > 0.94)
 	{
 		GetClip(L_008)->SetPlayTime(-100.3f);
-		Pos() = realPos->Pos();
 		ReturnIdle();
 		SetState(L_001);
 	}
 
 	if (KEY_DOWN(VK_SPACE))
+	{		
 		SetState(L_010);
+	}
 }
 
 void Player::L009()
@@ -504,12 +497,13 @@ void Player::L010()
 	if (GetClip(L_010)->isFirstPlay())
 		PlayClip(L_010);
 
-	//Rotate();
+	if (GetClip(L_010)->GetRatio() > 0.65 && GetClip(L_010)->GetRatio() <= 0.94)
+		if (KEY_PRESS('W'))
+			SetState(L_005);
 
 	if (GetClip(L_010)->GetRatio() > 0.94)
 	{
 		GetClip(L_010)->SetPlayTime(-100.3f);
-		Pos() = realPos->Pos();
 		ReturnIdle();
 		SetState(L_001);
 	}
@@ -534,22 +528,18 @@ void Player::L101()
 	{
 		if (KEY_FRONT(Keyboard::LMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_102);
 		}
 		else if (KEY_FRONT(Keyboard::RMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		else if (KEY_FRONT(Keyboard::LMBRMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
-		else if (KEY_DOWN(VK_SPACE))
+		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_010);
 		}
 	}
@@ -576,22 +566,18 @@ void Player::L102()
 	{
 		if (KEY_FRONT(Keyboard::LMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		else if (KEY_FRONT(Keyboard::RMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		else if (KEY_FRONT(Keyboard::LMBRMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
-		else if (KEY_DOWN(VK_SPACE))
+		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_010);
 		}
 	}
@@ -620,7 +606,7 @@ void Player::L103()
 			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
-		else if (KEY_DOWN(VK_SPACE))
+		else if (KEY_FRONT(Keyboard::SPACE))
 		{
 			Pos() = realPos->Pos();
 			SetState(L_010);
@@ -655,9 +641,8 @@ void Player::L104()
 			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
-		else if (KEY_DOWN(VK_SPACE))
+		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_010);
 		}
 	}
@@ -693,7 +678,7 @@ void Player::L105() // 배어올리기
 			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
-		else if (KEY_DOWN(VK_SPACE))
+		else if (KEY_FRONT(Keyboard::SPACE))
 		{
 			Pos() = realPos->Pos();
 			SetState(L_010);
@@ -732,7 +717,7 @@ void Player::L106() // 기인 베기 1
 			Pos() = realPos->Pos();
 			SetState(L_107);
 		}
-		else if (KEY_DOWN(VK_SPACE))
+		else if (KEY_FRONT(Keyboard::SPACE))
 		{
 			Pos() = realPos->Pos();
 			SetState(L_010);
