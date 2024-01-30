@@ -1,1 +1,6 @@
+<<<<<<< HEAD
 ﻿  DirectX3D.vcxproj -> C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exe
+=======
+﻿  GameManager.cpp
+  DirectX3D.vcxproj -> C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectX3D.exe
+>>>>>>> ef9780efe5ff47169124be6982cc89ea3419c3c3
