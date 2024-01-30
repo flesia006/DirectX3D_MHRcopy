@@ -14,6 +14,7 @@ Player::Player() : ModelAnimator("Player")
 	tmpCollider->Scale() *= 3.0f;
 	tmpCollider->SetParent(head);
 
+
 	ReadClips();
 
 	CAM->SetTarget(head);
@@ -35,7 +36,7 @@ void Player::Update()
 
 	mainHand->SetWorld(GetTransformByNode(108));
 	realPos->Pos() = GetTranslationByNode(1);	
-	head->Pos() = realPos->Pos() + Vector3::Up() * 150;
+	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
 
 
 	realPos->UpdateWorld();
@@ -497,15 +498,13 @@ void Player::L010()
 	if (GetClip(L_010)->isFirstPlay())
 		PlayClip(L_010);
 
-	if (GetClip(L_010)->GetRatio() > 0.65 && GetClip(L_010)->GetRatio() <= 0.94)
-		if (KEY_PRESS('W'))
-			SetState(L_005);
+	//if (GetClip(L_010)->GetRatio() > 0.65 && GetClip(L_010)->GetRatio() <= 0.94)
+	//	if (KEY_PRESS('W'))
+	//		SetState(L_005);
 
-	if (GetClip(L_010)->GetRatio() > 0.94)
+	if (GetClip(L_010)->GetRatio() > 0.98)
 	{
-		GetClip(L_010)->SetPlayTime(-100.3f);
 		ReturnIdle();
-		SetState(L_001);
 	}
 }
 
@@ -603,12 +602,10 @@ void Player::L103()
 	{
 		if (KEY_FRONT(Keyboard::RMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_010);
 		}
 	}
@@ -628,17 +625,14 @@ void Player::L104()
 	{
 		if (KEY_FRONT(Keyboard::LMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_105);
 		}
 		else if (KEY_FRONT(Keyboard::RMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_105);
 		}
 		else if (KEY_FRONT(Keyboard::LMBRMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
 		else if (KEY_FRONT(Keyboard::SPACE))
@@ -663,24 +657,20 @@ void Player::L105() // 배어올리기
 		// 세로베기
 		if (KEY_FRONT(Keyboard::LMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_102);
 		}
 		// 찌르기
 		else if (KEY_FRONT(Keyboard::RMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		// 베어내리기
 		else if (KEY_FRONT(Keyboard::LMBRMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
 		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_010);
 		}
 
@@ -702,24 +692,20 @@ void Player::L106() // 기인 베기 1
 		// 찌르기
 		if (KEY_FRONT(Keyboard::RMB) || KEY_FRONT(Keyboard::LMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		// 베어내리기
 		else if (KEY_FRONT(Keyboard::LMBRMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
 		// 기인 베기2
 		else if (KEY_FRONT(Keyboard::CTRL))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_107);
 		}
 		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_010);
 		}
 	}

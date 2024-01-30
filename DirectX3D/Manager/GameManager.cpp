@@ -10,6 +10,7 @@
 #include "Scenes/ModelAnimationScene.h"
 #include "Scenes/IntancingScene.h"
 #include "Scenes/GameScene.h"
+#include "Scenes/ShadowScene.h"
 
 // 과제
 // 1. npc 의 매니저화
@@ -33,12 +34,14 @@ GameManager::GameManager()
     //SceneManager::Get()->Create("ModelRender", new ModelRenderScene());
     //SceneManager::Get()->Create("ModelAnimationScene", new ModelAnimationScene());
     //SceneManager::Get()->Create("Instancing", new IntancingScene());
-    SceneManager::Get()->Create("game", new GameScene());
+    //SceneManager::Get()->Create("game", new GameScene());
+    SceneManager::Get()->Create("shadow", new ShadowScene());
 
     SceneManager::Get()->Add("Grid");
     SceneManager::Get()->Add("ModelExport");
     SceneManager::Get()->Add("Instancing");
     SceneManager::Get()->Add("game");
+    SceneManager::Get()->Add("shadow");
 }
 
 GameManager::~GameManager()

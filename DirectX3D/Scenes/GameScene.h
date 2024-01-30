@@ -22,8 +22,9 @@ private:
     Model* ground = nullptr;
     SkyBox* sky = nullptr;
 
+    Shadow* shadow;
+    LightBuffer::Light* light;
 
-
-
+    BlendState* blendState[2];
 };
 

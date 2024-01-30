@@ -227,6 +227,8 @@
     <ClInclude Include="Scenes\TerrainEditorScene.h" />
     <ClInclude Include="Scenes\TerrainScene.h" />
     <ClInclude Include="Objects\Landscape\SkyBox.h" />
+    <ClInclude Include="Framework\Environment\Shadow.h" />
+    <ClInclude Include="Scenes\ShadowScene.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
@@ -308,6 +310,8 @@
     <ClCompile Include="Scenes\TerrainEditorScene.cpp" />
     <ClCompile Include="Scenes\TerrainScene.cpp" />
     <ClCompile Include="Objects\Landscape\SkyBox.cpp" />
+    <ClCompile Include="Framework\Environment\Shadow.cpp" />
+    <ClCompile Include="Scenes\ShadowScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DirectX3D.rc" />

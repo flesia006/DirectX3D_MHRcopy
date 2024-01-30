@@ -23,6 +23,7 @@ public:
 
 
 	void Update();
+	void PreRender();
 	void Render();
 	void GUIRender();
 	void PostRender();
@@ -92,6 +93,8 @@ private:
 
 	Model* longSword = nullptr;
 
+	Shadow* shadow;
+	LightBuffer::Light* light; 
 
 	State curState = L_101;
 	State preState = L_101;
