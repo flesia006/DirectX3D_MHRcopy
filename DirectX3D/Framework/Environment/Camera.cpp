@@ -238,7 +238,7 @@ void Camera::ThirdPersonMode()
 //    forward = Vector3(dir.x, 0.0f, dir.z).GetNormalized();
 
     CAM->Rot().x -= delta.y * rotSpeed * DELTA;
-    CAM->Rot().x = Clamp(-XM_PIDIV2 + 0.01f, XM_PIDIV2 - 0.01f, CAM->Rot().x);
+    //CAM->Rot().x = Clamp(-XM_PIDIV2 + 1.1f, XM_PIDIV2 - 0.01f, CAM->Rot().x);
     CAM->Rot().y += delta.x * rotSpeed * DELTA;
 
 
@@ -258,7 +258,7 @@ void Camera::ThirdPresonViewMode()
     prevMousePos = mousePos;    
     
     sightRot->Rot().x -= delta.y * rotSpeed * DELTA;
-    sightRot->Rot().x = Clamp(-XM_PIDIV2 + 0.01f, XM_PIDIV2 - 0.01f, sightRot->Rot().x);
+    sightRot->Rot().x = Clamp(-XM_PIDIV2 + 0.5f, XM_PIDIV2 - 0.01f, sightRot->Rot().x);
     sightRot->Rot().y += delta.x * rotSpeed * DELTA;
     sightRot->UpdateWorld();
 

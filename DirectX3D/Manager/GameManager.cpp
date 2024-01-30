@@ -21,7 +21,7 @@
 // 3. 
 
 GameManager::GameManager()
-{
+{     
     Create();
 
     //SceneManager::Get()->Create("Grid", new GridScene());

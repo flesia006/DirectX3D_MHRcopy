@@ -31,6 +31,10 @@
 
 #define FOR(n) for(int i = 0; i < n ; i++)
 
+#define RATIO GetClip(curState)->GetRatio()
+#define INIT  GetClip(curState)->isFirstPlay()
+#define PLAY  if (GetClip(curState)->isFirstPlay()) PlayClip(curState)
+
 #include <windows.h>
 #include <string>
 #include <vector>
@@ -40,6 +44,7 @@
 #include <algorithm>
 #include <assert.h>
 #include <deque>
+#include <thread>
 
 #include <d3d11.h>
 #include <DirectXMath.h>

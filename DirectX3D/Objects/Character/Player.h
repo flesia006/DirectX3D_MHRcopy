@@ -100,7 +100,7 @@ private:
 	State preState = L_101;
 
 	float moveSpeed = 500;
-	float rotSpeed = 1.0f;
+	float rotSpeed = 5.0f;
 	float deceleration = 5;
 
 	const float motionSpeed = 1.5f;

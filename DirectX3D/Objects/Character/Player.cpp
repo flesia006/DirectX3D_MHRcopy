@@ -15,6 +15,7 @@ Player::Player() : ModelAnimator("Player")
 	tmpCollider->SetParent(head);
 
 
+
 	ReadClips();
 
 	CAM->SetTarget(head);
@@ -269,10 +270,9 @@ void Player::ResetPlayTime()
 
 void Player::Rotate()
 {
-	Vector3 forword = CAM->Back();
-	float rot = atan2(forword.x, forword.z);
-
-	//Rot().y = Lerp(Rot().y, rot, 0.006f) ;
+	Vector3 newForward;
+	newForward = Lerp(Forward(), CAM->Back(), rotSpeed * DELTA);
+	float rot = atan2(newForward.x, newForward.z);
 	Rot().y = rot;
 }
 
@@ -359,8 +359,7 @@ void Player::RecordLastPos()
 
 void Player::L001()
 {
-	if (GetClip(L_001)->isFirstPlay())
-		PlayClip(L_001);
+	PLAY;
 
 	if (KEY_PRESS('W'))
 		SetState(L_005);
@@ -382,11 +381,13 @@ void Player::L003()
 
 void Player::L004()
 {
-	if (GetClip(L_004)->isFirstPlay())
-		PlayClip(L_004);
+	PLAY;
 
-//	if (CAM->GetTarget() != realPos)
-//		CAM->SetTarget(realPos);
+	if (KEY_UP('W'))
+	{
+		SetState(L_008);
+		return;
+	}
 
 	Move();
 	Rotate();
@@ -394,7 +395,6 @@ void Player::L004()
 	// 101 내디뎌 베기
 	if (KEY_FRONT(Keyboard::LMB))
 	{		
-		Pos() = realPos->Pos();
 		SetState(L_101);		
 	}
 
@@ -408,37 +408,26 @@ void Player::L004()
 
 	}
 
-	if (GetClip(L_004)->GetRatio() > 0.94)
+	if (KEY_DOWN(VK_SPACE))
+		SetState(L_010);
+
+	if (RATIO > 0.94)
 	{
 		GetClip(L_004)->SetPlayTime(-100.3f);
 	}
-
-	if (KEY_UP('W'))
-	{
-		SetState(L_008);
-		return;
-	}
-
-	if (KEY_DOWN(VK_SPACE))
-		SetState(L_010);
 }
 
 void Player::L005()
 {
-	if (GetClip(L_005)->isFirstPlay())
-		PlayClip(L_005);
+	PLAY;
 
 	Rotate();
 
-	if (GetClip(L_004)->GetRatio() > 0.94)
-	{
-			SetState(L_004);
-	}
-	if (GetClip(L_005)->GetRatio() > 0.94 && KEY_PRESS('W'))
+	if (RATIO > 0.94 && KEY_PRESS('W'))
 	{
 		SetState(L_004);
 	}
-	else if (GetClip(L_005)->GetRatio() > 0.94)
+	else if (RATIO > 0.94)
 	{
 		Pos() = realPos->Pos();
 		ReturnIdle();
@@ -463,29 +452,27 @@ void Player::L007()
 
 void Player::L008()
 {
-	if (GetClip(L_008)->isFirstPlay())
-		PlayClip(L_008);
+	PLAY;
 
 	Rotate();
 
-	if (GetClip(L_008)->GetRatio() > 0.5 && GetClip(L_008)->GetRatio() <= 0.94)
+	if (RATIO > 0.5 && RATIO <= 0.94)
 	{
 		if (KEY_PRESS('W'))
 		{
 			SetState(L_005);
 		}
+		if (KEY_DOWN(VK_SPACE))
+		{
+			SetState(L_010);
+		}
 	}
 
-	if (GetClip(L_008)->GetRatio() > 0.94)
+	if (RATIO > 0.94)
 	{
 		GetClip(L_008)->SetPlayTime(-100.3f);
 		ReturnIdle();
 		SetState(L_001);
-	}
-
-	if (KEY_DOWN(VK_SPACE))
-	{		
-		SetState(L_010);
 	}
 }
 
@@ -495,8 +482,7 @@ void Player::L009()
 
 void Player::L010()
 {
-	if (GetClip(L_010)->isFirstPlay())
-		PlayClip(L_010);
+	PLAY;
 
 	//if (GetClip(L_010)->GetRatio() > 0.65 && GetClip(L_010)->GetRatio() <= 0.94)
 	//	if (KEY_PRESS('W'))
@@ -510,20 +496,19 @@ void Player::L010()
 
 void Player::L101()
 {
-
 	// PlayClip 하는데 계속 반복해서 호출되면 모션 반복되니까 방지 + 딱 한번만 실행되는거 놓기
-	if (GetClip(L_101)->isFirstPlay())
+	if (INIT)
 	{
 		PlayClip(L_101);
 		MotionRotate(30);
 	}
 
-	if (GetClip(L_101)->GetRatio() < 0.3)
+	if (RATIO < 0.3)
 		Rot().y = Lerp(Rot().y, rad, 0.001f);
 
 
 	// 해당 클립이 60% 이상 재생됐으면 if 조건 충족
-	if (GetClip(L_101)->GetRatio() > 0.6)
+	if (RATIO > 0.6)
 	{
 		if (KEY_FRONT(Keyboard::LMB))
 		{
@@ -543,7 +528,7 @@ void Player::L101()
 		}
 	}
 
-	if (GetClip(L_101)->GetRatio() > 0.98)
+	if (RATIO > 0.98)
 	{
 		ReturnIdle();
 	}
@@ -552,16 +537,16 @@ void Player::L101()
 
 void Player::L102()
 {
-	if (GetClip(L_102)->isFirstPlay())
+	if (INIT)
 	{
 		PlayClip(L_102);
 		MotionRotate(30);
 	}
 
-	if (GetClip(L_102)->GetRatio() < 0.3)
+	if (RATIO < 0.3)
 		Rot().y = Lerp(Rot().y, rad, 0.001f);
 
-	if (GetClip(L_102)->GetRatio() > 0.5)
+	if (RATIO > 0.5)
 	{
 		if (KEY_FRONT(Keyboard::LMB))
 		{
@@ -581,24 +566,24 @@ void Player::L102()
 		}
 	}
 
-	if (GetClip(L_102)->GetRatio() > 0.98)
+	if (RATIO > 0.98)
 	{
 		ReturnIdle();
 	}
 }
 
-void Player::L103()
+void Player::L103() // 베어내리기
 {
-	if (GetClip(L_103)->isFirstPlay())
+	if (INIT)
 	{
 		PlayClip(L_103);
 		MotionRotate(30);
 	}
 
-	if (GetClip(L_103)->GetRatio() < 0.3)
+	if (RATIO < 0.3) // 30%
 		Rot().y = Lerp(Rot().y, rad, 0.001f);
 
-	if (GetClip(L_103)->GetRatio() > 0.95)
+	if (RATIO > 0.95)
 	{
 		if (KEY_FRONT(Keyboard::RMB))
 		{
@@ -610,7 +595,7 @@ void Player::L103()
 		}
 	}
 
-	if (GetClip(L_103)->GetRatio() > 0.98)
+	if (RATIO > 0.98) 
 	{
 		ReturnIdle();
 	}
@@ -618,10 +603,10 @@ void Player::L103()
 
 void Player::L104()
 {
-	if (GetClip(L_104)->isFirstPlay())
-		PlayClip(L_104);
+	PLAY;
 
-	if (GetClip(L_104)->GetRatio() > 0.6)
+
+	if (RATIO > 0.6)
 	{
 		if (KEY_FRONT(Keyboard::LMB))
 		{
@@ -641,7 +626,7 @@ void Player::L104()
 		}
 	}
 
-	if (GetClip(L_104)->GetRatio() > 0.98)
+	if (RATIO > 0.98)
 	{
 		ReturnIdle();
 	}
@@ -649,45 +634,36 @@ void Player::L104()
 
 void Player::L105() // 배어올리기
 {
-	if (GetClip(L_105)->isFirstPlay())
-		PlayClip(L_105);
+	PLAY;
 
-	if (GetClip(L_105)->GetRatio() > 0.6)
+	if (RATIO > 0.6)
 	{
 		// 세로베기
 		if (KEY_FRONT(Keyboard::LMB))
-		{
 			SetState(L_102);
-		}
+
 		// 찌르기
 		else if (KEY_FRONT(Keyboard::RMB))
-		{
 			SetState(L_104);
-		}
+
 		// 베어내리기
 		else if (KEY_FRONT(Keyboard::LMBRMB))
-		{
 			SetState(L_103);
-		}
+
 		else if (KEY_FRONT(Keyboard::SPACE))
-		{
 			SetState(L_010);
-		}
 
 	}
 
-	if (GetClip(L_105)->GetRatio() > 0.98)
-	{
+	if (RATIO > 0.98)
 		ReturnIdle();
-	}
 }
 
 void Player::L106() // 기인 베기 1
 {
-	if (GetClip(L_106)->isFirstPlay())
-		PlayClip(L_106);
+	PLAY;
 
-	if (GetClip(L_106)->GetRatio() > 0.6)
+	if (RATIO > 0.6)
 	{
 		// 찌르기
 		if (KEY_FRONT(Keyboard::RMB) || KEY_FRONT(Keyboard::LMB))
@@ -710,10 +686,8 @@ void Player::L106() // 기인 베기 1
 		}
 	}
 
-	if (GetClip(L_106)->GetRatio() > 0.98)
-	{
+	if (RATIO > 0.98)
 		ReturnIdle();
-	}
 }
 
 void Player::L107()
