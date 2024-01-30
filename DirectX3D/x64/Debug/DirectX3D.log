@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿  Framework.cpp
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Math\Vector2.h(10,29): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Math\Vector2.h(10,41): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -6,6 +7,102 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Texture.h(14,43): warning C4244:
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimator.h(54,24): warning C4267: 'return': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimatorInstancing.h(60,24): warning C4267: 'return': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\utility(200,61): warning C4244: '초기화 중': '_Ty'에서 '_Ty2'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+=======
+﻿C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Collider.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Texture.cso
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Grid.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Compute\ByteAddress.hlsl(14,7-59): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ByteAddress.cso
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ComputePicking.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Particle.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Billboard.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Rain.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Snow.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Spark.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Sprite.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Skybox.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Landscape\Terrain.hlsl(10,2-29): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Terrain.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Landscape\TerrainEditor.hlsl(23,2-29): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\TerrainEditor.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Light\AnimGBuffer.hlsl(12,2-29): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\AnimGBuffer.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Light\Deferred.hlsl(97,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Deferred.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DepthMap.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Light\GBuffer.hlsl(10,2-29): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\GBuffer.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Light\Light.hlsl(18,2-29): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Light.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Light\Shadow.hlsl(40,2-29): warning X3206: implicit truncation of vector type
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Light\Shadow.hlsl(73,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Shadow.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Model\ModelAnimation.hlsl(12,2-29): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ModelAnimation.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Model\ModelAnimationInstancing.hlsl(12,2-29): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ModelAnimationInstancing.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Model\ModelInstancing.hlsl(10,2-29): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ModelInstancing.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Bloom.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\Effect\Fog.hlsl(18,2-29): warning X3206: implicit truncation of vector type
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\Fog.cso
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Shaders\PixelHeader.hlsli(260,18-31): warning X3203: signed/unsigned mismatch, unsigned assumed
+  
+  compilation object save succeeded; see C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ProgressBar.cso
+  Framework.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Math\Vector2.h(10,29): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Math\Vector2.h(10,41): warning C4244: '초기화 중': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Texture.h(14,70): warning C4244: '인수': 'const size_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Texture.h(14,43): warning C4244: '인수': 'const size_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelAnimator.h(54,24): warning C4267: 'return': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelAnimatorInstancing.h(60,24): warning C4267: 'return': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\utility(242,61): warning C4244: '초기화 중': '_Ty'에서 '_Ty2'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Ty=int
@@ -14,8 +111,14 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
           [
               _Ty2=float
           ]
+<<<<<<< HEAD
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Keyboard.h(33,13): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<Keyboard::Inputs,float>::pair<Keyboard::Inputs,int,0>(std::pair<Keyboard::Inputs,int> &&) noexcept'에 대한 참조를 확인하세요.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Keyboard.h(33,38): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<Keyboard::Inputs,float>::pair<Keyboard::Inputs,int,0>(std::pair<Keyboard::Inputs,int> &&) noexcept'에 대한 참조를 확인하세요.
+=======
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\Keyboard.h(33): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<Keyboard::Inputs,float>::pair<Keyboard::Inputs,int,0>(std::pair<Keyboard::Inputs,int> &&) noexcept'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\Keyboard.h(33): message : 컴파일되는 함수 템플릿 인스턴스화 'std::pair<Keyboard::Inputs,float>::pair<Keyboard::Inputs,int,0>(std::pair<Keyboard::Inputs,int> &&) noexcept'에 대한 참조를 확인하세요.
+  DepthStencil.cpp
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
   DirectX3D.cpp
   ConstBuffer.cpp
   IndexBuffer.cpp
@@ -23,6 +126,7 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Keyboard.h(33,38): message : 
   StructuredBuffer.cpp
   VertexBuffer.cpp
   BoxCollider.cpp
+<<<<<<< HEAD
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(72,1): message : 클래스 템플릿 멤버 함수 'void Mesh<Vertex>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Collision\BoxCollider.cpp(8,21): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Vertex>::CreateMesh(void)'에 대한 참조를 확인하세요.
@@ -116,13 +220,110 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '�
   RenderTarget.cpp
   Texture.cpp
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Texture.cpp(24,38): warning C4267: '초기화 중': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+=======
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<Vertex>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\BoxCollider.cpp(8): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Vertex>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\BoxCollider.cpp(8): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<Vertex>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  CapsuleCollider.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<Vertex>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\CapsuleCollider.cpp(8): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Vertex>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\CapsuleCollider.cpp(8): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<Vertex>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Collider.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(40): message : 클래스 템플릿 멤버 함수 'void Mesh<Vertex>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\Collider.cpp(24): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Vertex>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\Collider.cpp(7): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<Vertex>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(50,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  SphereCollider.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\SphereCollider.cpp(23,13): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\SphereCollider.cpp(29,21): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<Vertex>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\SphereCollider.cpp(9): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Vertex>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Collision\SphereCollider.cpp(9): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<Vertex>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Camera.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Environment\Camera.cpp(16,56): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Environment\Camera.cpp(266,73): warning C4305: '인수': 'double'에서 'const float'(으)로 잘립니다.
+  Environment.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Environment\Environment.cpp(110,22): warning C4244: '=': 'UINT'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Environment\Environment.cpp(111,23): warning C4244: '=': 'UINT'에서 'FLOAT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GameMath.cpp
+  Transform.cpp
+  ModelAnimator.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelAnimator.cpp(69,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelAnimator.cpp(141,34): warning C4267: '초기화 중': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelAnimator.cpp(146,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelAnimator.cpp(165,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelAnimator.cpp(180,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelAnimator.cpp(207,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  ModelAnimatorInstancing.cpp
+  ModelClip.cpp
+  ModelExporter.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(54,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(113,34): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(244,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(245,57): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(250,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(291,31): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(297,43): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(298,88): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(300,42): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(301,79): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(307,30): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(319,30): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(342,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(356,30): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(367,30): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(382,32): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(403,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(437,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(453,39): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(457,49): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(459,63): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelExporter.cpp(476,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  ModelInstancing.cpp
+  코드를 생성하고 있습니다...
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Math\Vector3.h(93): warning C4715: 'Vector3::operator[]': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Math\Vector3.h(93): warning C4715: 'Vector3::operator[]': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  컴파일하고 있습니다...
+  ModelMesh.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(40): message : 클래스 템플릿 멤버 함수 'void Mesh<ModelVertex>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelMesh.cpp(15): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<ModelVertex>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelMesh.cpp(9): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<ModelVertex>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(50,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(62,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(56): message : 클래스 템플릿 멤버 함수 'void Mesh<ModelVertex>::DrawInstanced(UINT,D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelMesh.cpp(21): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<ModelVertex>::DrawInstanced(UINT,D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(66,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<ModelVertex>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\ModelMesh.cpp(34): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<ModelVertex>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Model.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\Model.cpp(58,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Model\Model.cpp(81,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Material.cpp
+  Texture.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Texture.cpp(24,38): warning C4267: '초기화 중': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
   ComputeShader.cpp
   GeometryShader.cpp
   PixelShader.cpp
   Shader.cpp
   VertexShader.cpp
+<<<<<<< HEAD
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Shader\VertexShader.cpp(97,40): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Shader\VertexShader.cpp(112,21): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+=======
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Shader\VertexShader.cpp(97,40): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Shader\VertexShader.cpp(112,21): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
   BlendState.cpp
   DepthStencilState.cpp
   RasterizerState.cpp
@@ -131,6 +332,7 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Shader\VertexShader.cpp(112,21): warnin
   Audio.cpp
   BinaryReader.cpp
   BinaryWriter.cpp
+<<<<<<< HEAD
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\BinaryWriter.cpp(37,21): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\BinaryWriter.cpp(40,68): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\BinaryWriter.cpp(45,21): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
@@ -168,29 +370,90 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
               _Size=unsigned __int64
           ]
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xstring(3577,1): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<wchar_t*,0>(_Iter,_Iter,const _Alloc &)'에 대한 참조를 확인하세요.
+=======
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\BinaryWriter.cpp(37,21): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\BinaryWriter.cpp(40,68): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\BinaryWriter.cpp(45,21): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\BinaryWriter.cpp(48,69): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Font.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\Font.cpp(106,30): warning C4267: '인수': 'size_t'에서 'UINT32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\Font.cpp(130,30): warning C4267: '인수': 'size_t'에서 'UINT32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\Font.cpp(135,79): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\Font.cpp(137,88): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Keyboard.cpp
+  Observer.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Timer.cpp
+  tinyxml2.cpp
+  Utility.cpp
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2541,23): warning C4244: '인수': '_Elem'에서 'const _Elem'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Elem=wchar_t
+          ]
+          and
+          [
+              _Elem=char
+          ]
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2552): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<_Iter>(_Iter,const _Iter,std::input_iterator_tag)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *
+          ]
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2552): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<_Iter>(_Iter,const _Iter,std::input_iterator_tag)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *
+          ]
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2532): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<_Iter>(const _Iter,const _Iter,std::forward_iterator_tag)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *
+          ]
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(2532): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::basic_string<char,std::char_traits<char>,std::allocator<char>>::_Construct<_Iter>(const _Iter,const _Iter,std::forward_iterator_tag)'에 대한 참조를 확인하세요.
+          with
+          [
+              _Iter=wchar_t *
+          ]
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(3260): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<wchar_t*,0>(_Iter,_Iter,const _Alloc &)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Iter=wchar_t *,
               _Alloc=std::allocator<char>
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xstring(3577,32): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<wchar_t*,0>(_Iter,_Iter,const _Alloc &)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xstring(3260): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>::basic_string<wchar_t*,0>(_Iter,_Iter,const _Alloc &)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Iter=wchar_t *,
               _Alloc=std::allocator<char>
           ]
+<<<<<<< HEAD
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Utility.cpp(6,13): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(const _Iter,const _Iter)'에 대한 참조를 확인하세요.
+=======
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\Utility.cpp(6): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(const _Iter,const _Iter)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Elem=wchar_t,
               _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>
           ]
+<<<<<<< HEAD
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Utility.cpp(6,16): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(const _Iter,const _Iter)'에 대한 참조를 확인하세요.
+=======
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Utilities\Utility.cpp(6): message : 컴파일되는 함수 템플릿 인스턴스화 'std::basic_string<char,std::char_traits<char>,std::allocator<char>> &std::basic_string<char,std::char_traits<char>,std::allocator<char>>::assign<std::_String_iterator<std::_String_val<std::_Simple_types<_Elem>>>,0>(const _Iter,const _Iter)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Elem=wchar_t,
               _Iter=std::_String_iterator<std::_String_val<std::_Simple_types<wchar_t>>>
           ]
+<<<<<<< HEAD
   tinyxml2.cpp
   GameManager.cpp
   SceneManager.cpp
@@ -208,24 +471,59 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(72,1): message : 클래�
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Basic\Cube.cpp(10,21): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Quad::VertexType>::CreateMesh(void)'에 대한 참조를 확인하세요.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xmemory(680,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+=======
+  KunaiManager.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Manager\KunaiManager.cpp(9,2): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Kunai.cpp
+  Player.cpp
+  RenderTarget.cpp
+  GameScene.cpp
+  Naruto.cpp
+  Human.cpp
+  GameManager.cpp
+  SceneManager.cpp
+  ActorUI.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Actor\ActorUI.cpp(78,21): warning C4244: '인수': 'int'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Actor\ActorUI.cpp(125,38): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Cube.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(40): message : 클래스 템플릿 멤버 함수 'void Mesh<Quad::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cube.cpp(36): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Quad::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cube.cpp(8): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<Quad::VertexType>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(50,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<Quad::VertexType>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cube.cpp(10): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Quad::VertexType>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xmemory(681,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Ty=int
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(852,1): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float,float,float,int,int>(_Alloc &,_Objty *const ,float &&,float &&,float &&,int &&,int &&)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\vector(708): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float,float,float,int,int>(_Alloc &,_Objty *const ,float &&,float &&,float &&,int &&,int &&)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Alloc=std::allocator<Quad::VertexType>,
               _Ty=VertexUV,
               _Objty=VertexUV
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(863,36): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float,float,float,int,int>(_Alloc &,_Objty *const ,float &&,float &&,float &&,int &&,int &&)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\vector(713): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float,float,float,int,int>(_Alloc &,_Objty *const ,float &&,float &&,float &&,int &&,int &&)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Alloc=std::allocator<Quad::VertexType>,
               _Ty=VertexUV,
               _Objty=VertexUV
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(839,1): message : 컴파일되는 함수 템플릿 인스턴스화 '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<float,float,float,int,int>(float &&,float &&,float &&,int &&,int &&)'에 대한 참조를 확인하세요.
           with
           [
@@ -247,11 +545,21 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
               _Ty=Quad::VertexType
           ]
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Basic\Cube.cpp(47,70): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<T,std::allocator<T>>::emplace_back<float,float,float,int,int>(float &&,float &&,float &&,int &&,int &&)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\vector(726): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<T,std::allocator<T>>::_Emplace_back_with_unused_capacity<_Ty,_Ty,_Ty,int,int>(_Ty &&,_Ty &&,_Ty &&,int &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=Quad::VertexType,
+              _Ty=float
+          ]
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cube.cpp(47): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<T,std::allocator<T>>::emplace_back<float,float,float,int,int>(float &&,float &&,float &&,int &&,int &&)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               T=Quad::VertexType
           ]
   Cylinder.cpp
+<<<<<<< HEAD
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Basic\Cylinder.cpp(40,23): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Basic\Cylinder.cpp(60,23): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Basic\Cylinder.cpp(75,23): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
@@ -276,24 +584,59 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(72,1): message : 클래�
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Basic\Quad.cpp(8,21): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Quad::VertexType>::CreateMesh(void)'에 대한 참조를 확인하세요.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xmemory(680,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+=======
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cylinder.cpp(40,23): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cylinder.cpp(60,23): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cylinder.cpp(75,23): warning C4018: '<=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(40): message : 클래스 템플릿 멤버 함수 'void Mesh<Sphere::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cylinder.cpp(24): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Sphere::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cylinder.cpp(8): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<Sphere::VertexType>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(50,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<Sphere::VertexType>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Cylinder.cpp(12): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Sphere::VertexType>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  GameObject.cpp
+  Quad.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(40): message : 클래스 템플릿 멤버 함수 'void Mesh<Quad::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Quad.cpp(34): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Quad::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Quad.cpp(6): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<Quad::VertexType>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(50,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<Quad::VertexType>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Quad.cpp(8): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Quad::VertexType>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xmemory(681,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Ty=int
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(852,1): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float&,float&,int,int,int>(_Alloc &,_Objty *const ,float &,float &,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\vector(708): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float&,float&,int,int,int>(_Alloc &,_Objty *const ,float &,float &,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Alloc=std::allocator<Quad::VertexType>,
               _Ty=VertexUV,
               _Objty=VertexUV
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(863,36): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float&,float&,int,int,int>(_Alloc &,_Objty *const ,float &,float &,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\vector(713): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,float&,float&,int,int,int>(_Alloc &,_Objty *const ,float &,float &,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Alloc=std::allocator<Quad::VertexType>,
               _Ty=VertexUV,
               _Objty=VertexUV
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(839,1): message : 컴파일되는 함수 템플릿 인스턴스화 '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<float&,float&,int,int,int>(float &,float &,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
           with
           [
@@ -315,11 +658,21 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
               _Ty=Quad::VertexType
           ]
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Basic\Quad.cpp(46,45): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<T,std::allocator<T>>::emplace_back<float&,float&,int,int,int>(float &,float &,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\vector(726): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<T,std::allocator<T>>::_Emplace_back_with_unused_capacity<float&,float&,_Ty,_Ty,_Ty>(float &,float &,_Ty &&,_Ty &&,_Ty &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=Quad::VertexType,
+              _Ty=int
+          ]
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Quad.cpp(46): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<T,std::allocator<T>>::emplace_back<float&,float&,int,int,int>(float &,float &,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               T=Quad::VertexType
           ]
   Sphere.cpp
+<<<<<<< HEAD
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(40,1): message : 클래스 템플릿 멤버 함수 'void Mesh<Sphere::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Objects\Basic\Sphere.cpp(23,15): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Sphere::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
@@ -394,24 +747,101 @@ C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(88,1): warning C4267: '�
 C:\CWY\MHR_Portfolio\DirectX3D\Framework\Render\Mesh.h(87,1): message : 클래스 템플릿 멤버 함수 'void Mesh<VertexColor>::UpdateVertex(void)'을(를) 컴파일하는 중입니다.
 C:\CWY\MHR_Portfolio\DirectX3D\Scenes\GridScene.cpp(38,23): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<VertexColor>::UpdateVertex(void)'에 대한 참조를 확인하세요.
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xmemory(680,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+=======
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(40): message : 클래스 템플릿 멤버 함수 'void Mesh<Sphere::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Sphere.cpp(23): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Sphere::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Sphere.cpp(8): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<Sphere::VertexType>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(50,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<Sphere::VertexType>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Basic\Sphere.cpp(11): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Sphere::VertexType>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Terrain.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\Terrain.cpp(42,20): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\Terrain.cpp(43,20): warning C4018: '>=': signed 또는 unsigned가 일치하지 않습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(40): message : 클래스 템플릿 멤버 함수 'void Mesh<Sphere::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\Terrain.cpp(34): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Sphere::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\Terrain.cpp(15): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<Sphere::VertexType>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(50,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<Sphere::VertexType>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\Terrain.cpp(19): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<Sphere::VertexType>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  TerrainEditor.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(161,12): warning C4244: '초기화 중': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(314,38): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(517,32): warning C4244: '초기화 중': 'float'에서 'uint8_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(585,58): warning C4244: '=': 'float'에서 'uint8_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(586,58): warning C4244: '=': 'float'에서 'uint8_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(587,58): warning C4244: '=': 'float'에서 'uint8_t'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(40): message : 클래스 템플릿 멤버 함수 'void Mesh<TerrainEditor::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(76): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<TerrainEditor::VertexType>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(11): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<TerrainEditor::VertexType>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(50,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<TerrainEditor::VertexType>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(16): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<TerrainEditor::VertexType>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(88,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(87): message : 클래스 템플릿 멤버 함수 'void Mesh<TerrainEditor::VertexType>::UpdateVertex(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(338): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<TerrainEditor::VertexType>::UpdateVertex(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(94,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(93): message : 클래스 템플릿 멤버 함수 'void Mesh<TerrainEditor::VertexType>::UpdateIndex(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Landscape\TerrainEditor.cpp(339): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<TerrainEditor::VertexType>::UpdateIndex(void)'에 대한 참조를 확인하세요.
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  BlockManager.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Manager\BlockManager.cpp(39,62): warning C4267: '인수': 'size_t'에서 'const int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Robot.cpp
+  RobotManager.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Objects\Manager\RobotManager.cpp(16,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  CollisionScene.cpp
+  CubeScene.cpp
+  GridScene.cpp
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(46,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(40): message : 클래스 템플릿 멤버 함수 'void Mesh<VertexColor>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Scenes\GridScene.cpp(50): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<VertexColor>::Draw(D3D11_PRIMITIVE_TOPOLOGY)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Scenes\GridScene.cpp(10): message : 컴파일되는 클래스 템플릿 인스턴스화 'Mesh<VertexColor>'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(50,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(76,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(72): message : 클래스 템플릿 멤버 함수 'void Mesh<VertexColor>::CreateMesh(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Scenes\GridScene.cpp(12): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<VertexColor>::CreateMesh(void)'에 대한 참조를 확인하세요.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(81,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(88,1): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Render\Mesh.h(87): message : 클래스 템플릿 멤버 함수 'void Mesh<VertexColor>::UpdateVertex(void)'을(를) 컴파일하는 중입니다.
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Scenes\GridScene.cpp(38): message : 컴파일되는 함수 템플릿 인스턴스화 'void Mesh<VertexColor>::UpdateVertex(void)'에 대한 참조를 확인하세요.
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xmemory(681,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Ty=int
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(852,1): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int,int,int,int,int,int>(_Alloc &,_Objty *const ,int &&,int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\vector(708): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const int,int,int,int,int,int>(_Alloc &,_Objty *const ,const int &&,int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Alloc=std::allocator<VertexColor>,
               _Ty=VertexColor,
               _Objty=VertexColor
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(863,36): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,int,int,int,int,int,int>(_Alloc &,_Objty *const ,int &&,int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\vector(713): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::_Default_allocator_traits<_Alloc>::construct<_Ty,const int,int,int,int,int,int>(_Alloc &,_Objty *const ,const int &&,int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               _Alloc=std::allocator<VertexColor>,
               _Ty=VertexColor,
               _Objty=VertexColor
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\vector(839,1): message : 컴파일되는 함수 템플릿 인스턴스화 '_Ty &std::vector<_Ty,std::allocator<_Ty>>::_Emplace_back_with_unused_capacity<int,int,int,int,int,int>(int &&,int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
           with
           [
@@ -433,16 +863,35 @@ C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.3193
               _Ty=VertexColor
           ]
 C:\CWY\MHR_Portfolio\DirectX3D\Scenes\GridScene.cpp(75,52): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<T,std::allocator<T>>::emplace_back<int,int,int,int,int,int>(int &&,int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\vector(726): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<T,std::allocator<T>>::_Emplace_back_with_unused_capacity<_Ty,int,int,int,int,int>(_Ty &&,int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+          with
+          [
+              T=VertexColor,
+              _Ty=const int
+          ]
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Scenes\GridScene.cpp(75): message : 컴파일되는 함수 템플릿 인스턴스화 'void std::vector<T,std::allocator<T>>::emplace_back<const int,int,int,int,int,int>(const int &&,int &&,int &&,int &&,int &&,int &&)'에 대한 참조를 확인하세요.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
           with
           [
               T=VertexColor
           ]
+<<<<<<< HEAD
 C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.34.31933\include\xmemory(680,68): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+=======
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xmemory(681,68): warning C4244: '인수': '_Ty'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=const int
+          ]
+D:\Visual Studio\VC\Tools\MSVC\14.29.30133\include\xmemory(681,68): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
   IntancingScene.cpp
   LightScene.cpp
   ModelAnimationScene.cpp
   ModelExportScene.cpp
   ModelRenderScene.cpp
+<<<<<<< HEAD
   ShadowScene.cpp
   SphereScene.cpp
   TerrainEditorScene.cpp
@@ -470,3 +919,32 @@ ImGui.lib(imgui_impl_dx11.obj) : warning LNK4099: '' PDB를 'ImGui.lib(imgui_imp
 ImGui.lib(imgui_tables.obj) : warning LNK4099: '' PDB를 'ImGui.lib(imgui_tables.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
      C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.lib 라이브러리 및 C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exp 개체를 생성하고 있습니다.
   DirectX3D.vcxproj -> C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exe
+=======
+  SphereScene.cpp
+  TerrainEditorScene.cpp
+  TerrainScene.cpp
+  SkyBox.cpp
+  코드를 생성하고 있습니다...
+C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\DirectX3D\Framework\Math\Vector3.h(93): warning C4715: 'Vector3::operator[]': 모든 제어 경로에서 값을 반환하지는 않습니다.
+     C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectX3D.lib 라이브러리 및 C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectX3D.exp 개체를 생성하고 있습니다.
+DirectXTex.lib(BC.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(BC.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(BC4BC5.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(BC4BC5.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(BC6HBC7.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(BC6HBC7.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexCompress.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexCompress.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexConvert.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexConvert.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexD3D11.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexD3D11.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexDDS.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexDDS.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexImage.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexImage.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexMipMaps.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexMipMaps.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexTGA.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexTGA.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexUtil.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexUtil.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+DirectXTex.lib(DirectXTexWIC.obj) : warning LNK4099: 'DirectXTex.pdb' PDB를 'DirectXTex.lib(DirectXTexWIC.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectXTex.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(ImGuiFileDialog.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(ImGuiFileDialog.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_draw.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_draw.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_impl_dx11.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_impl_dx11.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_impl_win32.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_impl_win32.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_tables.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_tables.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_widgets.obj) : warning LNK4099: 'ImGui.pdb' PDB를 'ImGui.lib(imgui_widgets.obj)' 또는 'C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\ImGui.pdb'에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  DirectX3D.vcxproj -> C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectX3D.exe
+>>>>>>> 3c1ba98ac6e9df4b73434fdac1515fec3796e4db
