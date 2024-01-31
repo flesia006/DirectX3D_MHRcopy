@@ -1,6 +1,6 @@
-<<<<<<< HEAD
-﻿  DirectX3D.vcxproj -> C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exe
-=======
-﻿  GameManager.cpp
-  DirectX3D.vcxproj -> C:\Users\d\Downloads\DirectX3D_MHRcopy-master\DirectX3D_MHRcopy-master\x64\Debug\DirectX3D.exe
->>>>>>> ef9780efe5ff47169124be6982cc89ea3419c3c3
+﻿  Font.cpp
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Font.cpp(106,30): warning C4267: '인수': 'size_t'에서 'UINT32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Font.cpp(130,30): warning C4267: '인수': 'size_t'에서 'UINT32'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Font.cpp(135,79): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Utilities\Font.cpp(137,88): warning C4267: '인수': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  DirectX3D.vcxproj -> C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exe

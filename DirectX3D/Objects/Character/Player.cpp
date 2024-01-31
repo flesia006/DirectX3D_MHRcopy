@@ -96,6 +96,43 @@ void Player::GUIRender()
 
 void Player::PostRender()
 {
+	vector<string> strStatus;
+
+	strStatus.push_back("L_001 발도 상태 대기");
+	strStatus.push_back("L_002 발도");
+	strStatus.push_back("L_003 서서납도");
+	strStatus.push_back("L_004 발도상태 걷기");
+	strStatus.push_back("L_005 발도상태 걷기 시작");
+	strStatus.push_back("L_006 발도상태 좌로 걷기 시작");
+	strStatus.push_back("L_007 발도상태 우로 걷기 시작");
+	strStatus.push_back("L_008 멈춤");
+	strStatus.push_back("L_009 걸으면서 납도 ");
+	strStatus.push_back("L_010 앞구르기");
+	strStatus.push_back("L_011 왼쪽구르기");
+	strStatus.push_back("L_012 오른쪽구르기");
+	strStatus.push_back("L_013 뒤구르기");
+	strStatus.push_back("L_014 구른후걷기");
+	strStatus.push_back("L_015 구른후뒤걷기");
+	strStatus.push_back("L_071 낮은높이언덕파쿠르");
+	strStatus.push_back("L_072 중간높이언덕파쿠르");
+	strStatus.push_back("L_073 높은높이언덕파쿠르");
+	strStatus.push_back("L_077 ?");
+	strStatus.push_back("L_078 ?");
+	strStatus.push_back("L_079 ?");
+	strStatus.push_back("L_101 내디뎌베기");
+	strStatus.push_back("L_102 세로베기");
+	strStatus.push_back("L_103 베어내리기");
+	strStatus.push_back("L_104 찌르기");
+	strStatus.push_back("L_105 베어올리기");
+	strStatus.push_back("L_106 기인베기1");
+	strStatus.push_back("L_107 기인베기2");
+	strStatus.push_back("L_108 기인베기3");
+	strStatus.push_back("L_109 기인큰회전베기");
+	strStatus.push_back("L_110 기인내디뎌베기");
+	strStatus.push_back("L_111 일자베기");
+
+	string fps = "Status : " + strStatus.at((UINT)curState);
+	Font::Get()->RenderText(fps, { 350, WIN_HEIGHT - 30 });
 }
 
 void Player::Control()
@@ -396,6 +433,7 @@ void Player::L004()
 	if (KEY_FRONT(Keyboard::LMB))
 	{		
 		SetState(L_101);		
+		return;
 	}
 
 	// 106 기인 베기
@@ -409,9 +447,12 @@ void Player::L004()
 	}
 
 	if (KEY_DOWN(VK_SPACE))
+	{
 		SetState(L_010);
+		return;
+	}
 
-	if (RATIO > 0.94)
+	if (RATIO > 0.98)
 	{
 		GetClip(L_004)->SetPlayTime(-100.3f);
 	}
@@ -421,22 +462,28 @@ void Player::L005()
 {
 	PLAY;
 
-	Rotate();
+	if (KEY_UP('W'))
+	{
+		SetState(L_008);
+		return;
+	}
+
+	if (RATIO < 0.2)
+		Rotate();
 
 	if (RATIO > 0.94 && KEY_PRESS('W'))
 	{
 		SetState(L_004);
+		return;
 	}
-	else if (RATIO > 0.94)
+
+	if (RATIO > 0.98)
 	{
 		Pos() = realPos->Pos();
 		ReturnIdle();
 	}
 
-	if (KEY_UP('W'))
-	{
-		SetState(L_008);
-	}
+
 
 	if (KEY_DOWN(VK_SPACE))
 		SetState(L_010);
