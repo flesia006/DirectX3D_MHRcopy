@@ -31,6 +31,10 @@
 
 #define FOR(n) for(int i = 0; i < n ; i++)
 
+#define RATIO GetClip(curState)->GetRatio()
+#define INIT  GetClip(curState)->isFirstPlay()
+#define PLAY  if (GetClip(curState)->isFirstPlay()) PlayClip(curState)
+
 #include <windows.h>
 #include <string>
 #include <vector>
@@ -40,6 +44,7 @@
 #include <algorithm>
 #include <assert.h>
 #include <deque>
+#include <thread>
 
 #include <d3d11.h>
 #include <DirectXMath.h>
@@ -147,6 +152,7 @@ using namespace GameMath;
 
 #include "Framework/Environment/Camera.h"
 #include "Framework/Environment/Environment.h"
+#include "Framework/Environment/Shadow.h"
 
 //Object Header
 #include "Objects/Basic/GameObject.h"
@@ -165,6 +171,7 @@ using namespace GameMath;
 #include "Objects/Manager/BlockManager.h"
 #include "Objects/Manager/RobotManager.h"
 #include "Objects/Manager/KunaiManager.h"
+#include "Objects/Manager/UIManager.h"
 
 #include "Objects/Landscape/Terrain.h"
 #include "Objects/Landscape/TerrainEditor.h"

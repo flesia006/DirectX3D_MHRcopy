@@ -23,6 +23,7 @@ public:
 
 
 	void Update();
+	void PreRender();
 	void Render();
 	void GUIRender();
 	void PostRender();
@@ -66,6 +67,8 @@ private:
 	void L006();
 	void L007();
 	void L008();
+	void L009();
+	void L010();
 
 	void L101();
 	void L102();
@@ -84,17 +87,20 @@ private:
 	Transform* root = nullptr;
 	Transform* realPos = nullptr;
 	Transform* lastPos = nullptr;
+	Transform* head = nullptr;
 
 	SphereCollider* tmpCollider = nullptr;
 
 	Model* longSword = nullptr;
 
+	Shadow* shadow;
+	LightBuffer::Light* light; 
 
 	State curState = L_101;
 	State preState = L_101;
 
 	float moveSpeed = 500;
-	float rotSpeed = 1.0f;
+	float rotSpeed = 5.0f;
 	float deceleration = 5;
 
 	const float motionSpeed = 1.5f;
@@ -112,7 +118,7 @@ private:
 	int kunaiIndex = 0;
 
 
-	int node = 108;
+	int node = 84;
 
 	float camRot;
 	float rad;

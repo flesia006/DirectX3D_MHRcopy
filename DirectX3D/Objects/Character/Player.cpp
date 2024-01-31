@@ -4,26 +4,27 @@
 Player::Player() : ModelAnimator("Player")
 {
 	mainHand = new Transform();
-	root = new Transform();
+	head = new Transform();
 	realPos = new Transform();
 	lastPos = new Transform();
 	longSword = new Model("longSwd");
 	longSword->SetParent(mainHand);
 	
 	tmpCollider = new SphereCollider();
-	tmpCollider->Scale() *= 5.0f;
-	tmpCollider->SetParent(root);
+	tmpCollider->Scale() *= 3.0f;
+	tmpCollider->SetParent(head);
+
+
 
 	ReadClips();
 
-
-	CAM->SetTarget(realPos);
+	CAM->SetTarget(head);
 }
 
 Player::~Player()
 {
 	delete mainHand;
-	delete root;
+	delete head;
 	delete realPos;
 	delete tmpCollider;
 }
@@ -34,15 +35,16 @@ void Player::Update()
 	ResetPlayTime();
 
 
-	root->SetWorld(GetTransformByNode(1));
-	mainHand->SetWorld(GetTransformByNode(node));
+	mainHand->SetWorld(GetTransformByNode(108));
 	realPos->Pos() = GetTranslationByNode(1);	
+	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
+
 
 	realPos->UpdateWorld();
 	lastPos->UpdateWorld();
 	ModelAnimator::Update();
 	longSword->UpdateWorld();
-
+	head->UpdateWorld();
 	tmpCollider->UpdateWorld();
 }
 
@@ -67,7 +69,7 @@ void Player::GUIRender()
 	ImGui::SliderInt("keyboard", &U, 0, 200);
 
 
-	ImGui::SliderInt("loopApply", &loopApply, 100, 400);
+	ImGui::SliderInt("node", &node, 0, 100);
 
 
 	longSword->GUIRender();
@@ -94,12 +96,50 @@ void Player::GUIRender()
 
 void Player::PostRender()
 {
+	vector<string> strStatus;
+
+	strStatus.push_back("L_001 발도 상태 대기");
+	strStatus.push_back("L_002 발도");
+	strStatus.push_back("L_003 서서납도");
+	strStatus.push_back("L_004 발도상태 걷기");
+	strStatus.push_back("L_005 발도상태 걷기 시작");
+	strStatus.push_back("L_006 발도상태 좌로 걷기 시작");
+	strStatus.push_back("L_007 발도상태 우로 걷기 시작");
+	strStatus.push_back("L_008 멈춤");
+	strStatus.push_back("L_009 걸으면서 납도 ");
+	strStatus.push_back("L_010 앞구르기");
+	strStatus.push_back("L_011 왼쪽구르기");
+	strStatus.push_back("L_012 오른쪽구르기");
+	strStatus.push_back("L_013 뒤구르기");
+	strStatus.push_back("L_014 구른후걷기");
+	strStatus.push_back("L_015 구른후뒤걷기");
+	strStatus.push_back("L_071 낮은높이언덕파쿠르");
+	strStatus.push_back("L_072 중간높이언덕파쿠르");
+	strStatus.push_back("L_073 높은높이언덕파쿠르");
+	strStatus.push_back("L_077 ?");
+	strStatus.push_back("L_078 ?");
+	strStatus.push_back("L_079 ?");
+	strStatus.push_back("L_101 내디뎌베기");
+	strStatus.push_back("L_102 세로베기");
+	strStatus.push_back("L_103 베어내리기");
+	strStatus.push_back("L_104 찌르기");
+	strStatus.push_back("L_105 베어올리기");
+	strStatus.push_back("L_106 기인베기1");
+	strStatus.push_back("L_107 기인베기2");
+	strStatus.push_back("L_108 기인베기3");
+	strStatus.push_back("L_109 기인큰회전베기");
+	strStatus.push_back("L_110 기인내디뎌베기");
+	strStatus.push_back("L_111 일자베기");
+
+	string fps = "Status : " + strStatus.at((UINT)curState);
+	Font::Get()->RenderText(fps, { 150, WIN_HEIGHT - 30 });
 }
 
 void Player::Control()
 {
 	switch (curState)
 	{
+					// 이동 모션
 	case Player::L_001:
 		L001();
 		break;
@@ -118,10 +158,12 @@ void Player::Control()
 	case Player::L_007:
 		break;
 	case Player::L_008:
+		L008();
 		break;
 	case Player::L_009:
 		break;
 	case Player::L_010:
+		L010();
 		break;
 	case Player::L_011:
 		break;
@@ -145,7 +187,8 @@ void Player::Control()
 		break;
 	case Player::L_079:
 		break;
-	case Player::L_101:
+					// 공격 모션
+	case Player::L_101: 
 		L101();
 		break;
 	case Player::L_102:
@@ -213,7 +256,7 @@ void Player::Move()
 
 	if (KEY_PRESS('W'))
 	{
-		velocity.z += DELTA; // 속도(범용변수)에 델타만큼 전후값 주기
+		velocity.z = 1;//+= DELTA; // 속도(범용변수)에 델타만큼 전후값 주기		
 		isMoveZ = true; //전후 이동 수행 중
 	}
 
@@ -264,10 +307,9 @@ void Player::ResetPlayTime()
 
 void Player::Rotate()
 {
-	Vector3 forword = CAM->Back();
-	float rot = atan2(forword.x, forword.z);
-
-	//Rot().y = Lerp(Rot().y, rot, 0.006f) ;
+	Vector3 newForward;
+	newForward = Lerp(Forward(), CAM->Back(), rotSpeed * DELTA);
+	float rot = atan2(newForward.x, newForward.z);
 	Rot().y = rot;
 }
 
@@ -284,6 +326,7 @@ void Player::SetState(State state)
 	if (curState == state)
 		return;
 
+	Pos() = realPos->Pos();
 	preState = curState;
 	curState = state;
 //	PlayClip(state);
@@ -353,20 +396,16 @@ void Player::RecordLastPos()
 
 void Player::L001()
 {
-	if (GetClip(L_001)->isFirstPlay())
-		PlayClip(L_001);
+	PLAY;
+
+	if (KEY_PRESS('W'))
+		SetState(L_005);
 
 	if (KEY_DOWN(VK_LBUTTON))
-	{
-		Pos() = realPos->Pos();
 		SetState(L_101);
-	}
-	if (KEY_DOWN('W'))
-	{
-		Pos() = realPos->Pos();
-		GetClip(L_004)->ResetPlayTime();
-		SetState(L_004);
-	}
+
+	if (KEY_DOWN(VK_SPACE))
+		SetState(L_010);
 }
 
 void Player::L002()
@@ -379,11 +418,13 @@ void Player::L003()
 
 void Player::L004()
 {
-	if (GetClip(L_004)->isFirstPlay())
-		PlayClip(L_004);
+	PLAY;
 
-//	if (CAM->GetTarget() != realPos)
-//		CAM->SetTarget(realPos);
+	if (KEY_UP('W'))
+	{
+		SetState(L_008);
+		return;
+	}
 
 	Move();
 	Rotate();
@@ -391,13 +432,12 @@ void Player::L004()
 	// 101 내디뎌 베기
 	if (KEY_FRONT(Keyboard::LMB))
 	{		
-		Pos() = realPos->Pos();
 		SetState(L_101);		
+		return;
 	}
 
 	// 106 기인 베기
 	{
-
 
 	}
 
@@ -406,18 +446,47 @@ void Player::L004()
 
 	}
 
-	if (GetClip(L_004)->GetRatio() > 0.94)
+	if (KEY_DOWN(VK_SPACE))
 	{
-//		Pos() += Back() * loopApply;
-//		lastPos->Pos() = Pos();
-//		CAM->SetTarget(lastPos);
-		GetClip(L_004)->SetPlayTime(-100.3f);
+		SetState(L_010);
+		return;
 	}
 
+	if (RATIO > 0.98)
+	{
+		GetClip(L_004)->SetPlayTime(-100.3f);
+	}
 }
 
 void Player::L005()
 {
+	PLAY;
+
+	if (KEY_UP('W'))
+	{
+		SetState(L_008);
+		return;
+	}
+
+	if (RATIO < 0.2)
+		Rotate();
+
+	if (RATIO > 0.94 && KEY_PRESS('W'))
+	{
+		SetState(L_004);
+		return;
+	}
+
+	if (RATIO > 0.98)
+	{
+		Pos() = realPos->Pos();
+		ReturnIdle();
+	}
+
+
+
+	if (KEY_DOWN(VK_SPACE))
+		SetState(L_010);
 }
 
 void Player::L006()
@@ -430,43 +499,83 @@ void Player::L007()
 
 void Player::L008()
 {
+	PLAY;
+
+	Rotate();
+
+	if (RATIO > 0.5 && RATIO <= 0.94)
+	{
+		if (KEY_PRESS('W'))
+		{
+			SetState(L_005);
+		}
+		if (KEY_DOWN(VK_SPACE))
+		{
+			SetState(L_010);
+		}
+	}
+
+	if (RATIO > 0.94)
+	{
+		GetClip(L_008)->SetPlayTime(-100.3f);
+		ReturnIdle();
+		SetState(L_001);
+	}
+}
+
+void Player::L009()
+{
+}
+
+void Player::L010()
+{
+	PLAY;
+
+	//if (GetClip(L_010)->GetRatio() > 0.65 && GetClip(L_010)->GetRatio() <= 0.94)
+	//	if (KEY_PRESS('W'))
+	//		SetState(L_005);
+
+	if (GetClip(L_010)->GetRatio() > 0.98)
+	{
+		ReturnIdle();
+	}
 }
 
 void Player::L101()
 {
-
 	// PlayClip 하는데 계속 반복해서 호출되면 모션 반복되니까 방지 + 딱 한번만 실행되는거 놓기
-	if (GetClip(L_101)->isFirstPlay())
+	if (INIT)
 	{
 		PlayClip(L_101);
 		MotionRotate(30);
 	}
 
-	if (GetClip(L_101)->GetRatio() < 0.3)
+	if (RATIO < 0.3)
 		Rot().y = Lerp(Rot().y, rad, 0.001f);
 
 
 	// 해당 클립이 60% 이상 재생됐으면 if 조건 충족
-	if (GetClip(L_101)->GetRatio() > 0.6)
+	if (RATIO > 0.6)
 	{
-		if(KEY_FRONT(Keyboard::LMB))
+		if (KEY_FRONT(Keyboard::LMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_102);
 		}
 		else if (KEY_FRONT(Keyboard::RMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		else if (KEY_FRONT(Keyboard::LMBRMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
+		}
+		else if (KEY_FRONT(Keyboard::SPACE))
+		{
+			SetState(L_010);
 		}
 	}
 
-	if (GetClip(L_101)->GetRatio() > 0.98)
+	if (RATIO > 0.98)
 	{
 		ReturnIdle();
 	}
@@ -475,61 +584,65 @@ void Player::L101()
 
 void Player::L102()
 {
-	if (GetClip(L_102)->isFirstPlay())
+	if (INIT)
 	{
 		PlayClip(L_102);
 		MotionRotate(30);
 	}
 
-	if (GetClip(L_102)->GetRatio() < 0.3)
+	if (RATIO < 0.3)
 		Rot().y = Lerp(Rot().y, rad, 0.001f);
 
-	if (GetClip(L_102)->GetRatio() > 0.5)
+	if (RATIO > 0.5)
 	{
 		if (KEY_FRONT(Keyboard::LMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		else if (KEY_FRONT(Keyboard::RMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		else if (KEY_FRONT(Keyboard::LMBRMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
+		}
+		else if (KEY_FRONT(Keyboard::SPACE))
+		{
+			SetState(L_010);
 		}
 	}
 
-	if (GetClip(L_102)->GetRatio() > 0.98)
+	if (RATIO > 0.98)
 	{
 		ReturnIdle();
 	}
 }
 
-void Player::L103()
+void Player::L103() // 베어내리기
 {
-	if (GetClip(L_103)->isFirstPlay())
+	if (INIT)
 	{
 		PlayClip(L_103);
 		MotionRotate(30);
 	}
 
-	if (GetClip(L_103)->GetRatio() < 0.3)
+	if (RATIO < 0.3) // 30%
 		Rot().y = Lerp(Rot().y, rad, 0.001f);
 
-	if (GetClip(L_103)->GetRatio() > 0.95)
+	if (RATIO > 0.95)
 	{
 		if (KEY_FRONT(Keyboard::RMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
+		}
+		else if (KEY_FRONT(Keyboard::SPACE))
+		{
+			SetState(L_010);
 		}
 	}
 
-	if (GetClip(L_103)->GetRatio() > 0.98)
+	if (RATIO > 0.98) 
 	{
 		ReturnIdle();
 	}
@@ -537,29 +650,30 @@ void Player::L103()
 
 void Player::L104()
 {
-	if (GetClip(L_104)->isFirstPlay())
-		PlayClip(L_104);
+	PLAY;
 
-	if (GetClip(L_104)->GetRatio() > 0.6)
+
+	if (RATIO > 0.6)
 	{
 		if (KEY_FRONT(Keyboard::LMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_105);
 		}
 		else if (KEY_FRONT(Keyboard::RMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_105);
 		}
 		else if (KEY_FRONT(Keyboard::LMBRMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
+		}
+		else if (KEY_FRONT(Keyboard::SPACE))
+		{
+			SetState(L_010);
 		}
 	}
 
-	if (GetClip(L_104)->GetRatio() > 0.98)
+	if (RATIO > 0.98)
 	{
 		ReturnIdle();
 	}
@@ -567,69 +681,60 @@ void Player::L104()
 
 void Player::L105() // 배어올리기
 {
-	if (GetClip(L_105)->isFirstPlay())
-		PlayClip(L_105);
+	PLAY;
 
-	if (GetClip(L_105)->GetRatio() > 0.6)
+	if (RATIO > 0.6)
 	{
 		// 세로베기
 		if (KEY_FRONT(Keyboard::LMB))
-		{
-			Pos() = realPos->Pos();
 			SetState(L_102);
-		}
+
 		// 찌르기
 		else if (KEY_FRONT(Keyboard::RMB))
-		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
-		}
+
 		// 베어내리기
 		else if (KEY_FRONT(Keyboard::LMBRMB))
-		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
-		}
+
+		else if (KEY_FRONT(Keyboard::SPACE))
+			SetState(L_010);
 
 	}
 
-	if (GetClip(L_105)->GetRatio() > 0.98)
-	{
+	if (RATIO > 0.98)
 		ReturnIdle();
-	}
 }
 
 void Player::L106() // 기인 베기 1
 {
-	if (GetClip(L_106)->isFirstPlay())
-		PlayClip(L_106);
+	PLAY;
 
-	if (GetClip(L_106)->GetRatio() > 0.6)
+	if (RATIO > 0.6)
 	{
 		// 찌르기
 		if (KEY_FRONT(Keyboard::RMB) || KEY_FRONT(Keyboard::LMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_104);
 		}
 		// 베어내리기
 		else if (KEY_FRONT(Keyboard::LMBRMB))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_103);
 		}
 		// 기인 베기2
 		else if (KEY_FRONT(Keyboard::CTRL))
 		{
-			Pos() = realPos->Pos();
 			SetState(L_107);
+		}
+		else if (KEY_FRONT(Keyboard::SPACE))
+		{
+			SetState(L_010);
 		}
 	}
 
-	if (GetClip(L_106)->GetRatio() > 0.98)
-	{
+	if (RATIO > 0.98)
 		ReturnIdle();
-	}
 }
 
 void Player::L107()
