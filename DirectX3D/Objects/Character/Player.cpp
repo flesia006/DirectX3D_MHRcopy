@@ -254,47 +254,132 @@ void Player::Move()
 	bool isMoveZ = false; // 전후 이동 중 아님
 	bool isMoveX = false; // 좌우 이동 중 아님
 
+
+
+
+
 	if (KEY_PRESS('W'))
 	{
+		//Pos() += Back() * moveSpeed * DELTA;
+
 		velocity.z = 1;//+= DELTA; // 속도(범용변수)에 델타만큼 전후값 주기		
 		isMoveZ = true; //전후 이동 수행 중
 	}
 
 	if (KEY_PRESS('S'))
 	{
-		velocity.z -= DELTA;
+		//Pos() += Forward() * moveSpeed * DELTA;
+
+		velocity.z = 1;// DELTA;
 		isMoveZ = true; //전후 이동 수행 중
 	}
 
 	if (KEY_PRESS('A'))
 	{
-		velocity.x -= DELTA;
+		//Pos() += Right() * moveSpeed * DELTA;
+		velocity.z = 1;// DELTA;
+
+		//velocity.x = -1;//velocity.x -= 1;// DELTA;
 		isMoveX = true; //좌우 이동 수행 중
 	}
 
 	if (KEY_PRESS('D'))
 	{
-		velocity.x += DELTA;
+		//Pos() += Left() * moveSpeed * DELTA;
+		velocity.z = 1;// DELTA;
+
+		//velocity.x = 1; //velocity.x += 1;// DELTA;
 		isMoveX = true; //좌우 이동 수행 중
 	}
+	if (KEY_PRESS('Q'))
+	{
+		Rot().y -= 2 * DELTA;
+	}
+	if (KEY_PRESS('E'))
+	{
+		Rot().y += 2 * DELTA;
+	}
+
 
 	if (velocity.Length() > 1) //속도의 전체 가치가 1을 넘으면 (선으로 표현한 벡터의 길이가 1 초과)
 		velocity.Normalize(); //정규화
 	// 생각할 거리 : 이 코드가 만약 없으면....?
 
-
-	if (!isMoveZ) // 전후 이동 중이 아니면
-		velocity.z = Lerp(velocity.z, 0, deceleration * DELTA); //보간에 의해 감속
-
-	if (!isMoveX) // 좌우이동에 적용
-		velocity.x = Lerp(velocity.x, 0, deceleration * DELTA);
-
-	//좌우회전과 행렬계산에 의한 면법선 내기 ( = 정면 구하기)
-	Matrix rotY = XMMatrixRotationY(Rot().y);
+			//좌우회전과 행렬계산에 의한 면법선 내기 ( = 정면 구하기)
+	Matrix rotY = XMMatrixRotationY(Rot().y); ;
 	Vector3 direction = XMVector3TransformCoord(velocity, rotY); // 현재의 공간이 가지는 "정면"의 실제 벡터 방향
 
 	Pos() += direction * -1 * moveSpeed * DELTA; //"정면" 방향대로 이동
 
+	Vector3 CAMForward = CAM->Back();
+	Vector3 CAMBack = CAM->Back() * -1;
+	Vector3 CAMLeft = CAM->Right();
+	Vector3 CAMRight = CAM->Right() * -1;
+
+	Vector3 forward = Back();//모델 기준으로 앞 따오기
+	if (KEY_PRESS('W'))
+	{
+		Vector3 cross = Cross(forward, CAMForward);//방향차이에서 나온 법선
+
+		if (cross.y < 0)//법선이 밑이다 --> 내가 목적 방향보다 오른쪽을 보는 중이다 ----> 외적
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)//반대의 경우
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+	if (KEY_PRESS('S'))
+	{
+		Vector3 cross = Cross(forward, CAMBack);//방향차이에서 나온 법선
+
+		if (cross.y < 0)//법선이 밑이다 --> 내가 목적 방향보다 오른쪽을 보는 중이다 ----> 외적
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)//반대의 경우
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+	if (KEY_PRESS('A'))
+	{
+		Vector3 cross = Cross(forward, CAMLeft);//방향차이에서 나온 법선
+
+		if (cross.y < 0)//법선이 밑이다 --> 내가 목적 방향보다 오른쪽을 보는 중이다 ----> 외적
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)//반대의 경우
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+	if (KEY_PRESS('D'))
+	{
+		Vector3 cross = Cross(forward, CAMRight);//방향차이에서 나온 법선
+
+		if (cross.y < 0)//법선이 밑이다 --> 내가 목적 방향보다 오른쪽을 보는 중이다 ----> 외적
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)//반대의 경우
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+
+	//if (!isMoveZ) // 전후 이동 중이 아니면
+	//	velocity.z = Lerp(velocity.z, 0, deceleration * DELTA); //보간에 의해 감속
+	//
+	//if (!isMoveX) // 좌우이동에 적용
+	//	velocity.x = Lerp(velocity.x, 0, deceleration * DELTA);
+
+
+
+
+	
 }
 
 void Player::ResetPlayTime()
@@ -310,7 +395,7 @@ void Player::Rotate()
 	Vector3 newForward;
 	newForward = Lerp(Forward(), CAM->Back(), rotSpeed * DELTA);
 	float rot = atan2(newForward.x, newForward.z);
-	Rot().y = rot;
+	//Rot().y = rot;
 }
 
 void Player::Attack()
@@ -398,7 +483,7 @@ void Player::L001()
 {
 	PLAY;
 
-	if (KEY_PRESS('W'))
+	if (KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D'))
 		SetState(L_005);
 
 	if (KEY_DOWN(VK_LBUTTON))
@@ -420,7 +505,7 @@ void Player::L004()
 {
 	PLAY;
 
-	if (KEY_UP('W'))
+	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
 	{
 		SetState(L_008);
 		return;
@@ -462,7 +547,7 @@ void Player::L005()
 {
 	PLAY;
 
-	if (KEY_UP('W'))
+	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
 	{
 		SetState(L_008);
 		return;
@@ -471,7 +556,7 @@ void Player::L005()
 	if (RATIO < 0.2)
 		Rotate();
 
-	if (RATIO > 0.94 && KEY_PRESS('W'))
+	if (RATIO > 0.94 && KEY_PRESS('W') || RATIO > 0.94 && KEY_PRESS('S')|| RATIO > 0.94 && KEY_PRESS('A')|| RATIO > 0.94 && KEY_PRESS('D'))
 	{
 		SetState(L_004);
 		return;
@@ -505,7 +590,7 @@ void Player::L008()
 
 	if (RATIO > 0.5 && RATIO <= 0.94)
 	{
-		if (KEY_PRESS('W'))
+		if (KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D'))
 		{
 			SetState(L_005);
 		}
