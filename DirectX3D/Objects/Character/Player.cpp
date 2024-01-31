@@ -132,7 +132,7 @@ void Player::PostRender()
 	strStatus.push_back("L_111 일자베기");
 
 	string fps = "Status : " + strStatus.at((UINT)curState);
-	Font::Get()->RenderText(fps, { 350, WIN_HEIGHT - 30 });
+	Font::Get()->RenderText(fps, { 150, WIN_HEIGHT - 30 });
 }
 
 void Player::Control()
