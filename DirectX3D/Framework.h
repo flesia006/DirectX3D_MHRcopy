@@ -165,6 +165,7 @@ using namespace GameMath;
 #include "Objects/Character/Naruto.h"
 #include "Objects/Character/Robot.h"
 #include "Objects/Character/Player.h"
+#include "Objects/Enemy/Boss.h"
 
 #include "Objects/Actor/ActorUI.h"
 
