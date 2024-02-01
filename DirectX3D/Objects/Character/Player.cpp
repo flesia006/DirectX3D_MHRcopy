@@ -479,11 +479,8 @@ void Player::L005()
 
 	if (RATIO > 0.98)
 	{
-		Pos() = realPos->Pos();
 		ReturnIdle();
 	}
-
-
 
 	if (KEY_DOWN(VK_SPACE))
 		SetState(L_010);
