@@ -500,7 +500,7 @@ void Player::L003()
 void Player::L004()
 {
 	PLAY;
-
+	//
 	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
 	{
 		SetState(L_008);
