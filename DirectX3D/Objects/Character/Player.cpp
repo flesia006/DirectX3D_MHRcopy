@@ -14,8 +14,6 @@ Player::Player() : ModelAnimator("Player")
 	tmpCollider->Scale() *= 3.0f;
 	tmpCollider->SetParent(head);
 
-
-
 	ReadClips();
 
 	CAM->SetTarget(head);
@@ -386,8 +384,6 @@ void Player::ResetPlayTime()
 {
 	if (preState != curState)
 		GetClip(preState)->ResetPlayTime();
-
-
 }
 
 void Player::Rotate()
@@ -442,12 +438,12 @@ void Player::ReadClips()
 	ReadClip("L_013");
 	ReadClip("L_014");
 	ReadClip("L_015");
-	ReadClip("L_071");
-	ReadClip("L_072");
-	ReadClip("L_073");
-	ReadClip("L_077");
-	ReadClip("L_078");
-	ReadClip("L_079");
+	ReadClip("");
+	ReadClip("");
+	ReadClip("");
+	ReadClip("");
+	ReadClip("");
+	ReadClip("");
 	ReadClip("L_101");
 	ReadClip("L_102");
 	ReadClip("L_103");
@@ -556,7 +552,7 @@ void Player::L005()
 	if (RATIO < 0.2)
 		Rotate();
 
-	if (RATIO > 0.94 && KEY_PRESS('W') || RATIO > 0.94 && KEY_PRESS('S')|| RATIO > 0.94 && KEY_PRESS('A')|| RATIO > 0.94 && KEY_PRESS('D'))
+	if (RATIO > 0.94 && (KEY_PRESS('W') ||  KEY_PRESS('S')|| KEY_PRESS('A')|| KEY_PRESS('D')))
 	{
 		SetState(L_004);
 		return;

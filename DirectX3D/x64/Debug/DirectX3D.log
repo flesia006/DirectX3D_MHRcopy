@@ -1,1 +1,15 @@
-﻿  DirectX3D.vcxproj -> D:\Direct3D_portfolio\DirectX3D_MHRcopy-master\x64\Debug\DirectX3D.exe
+﻿  ModelAnimator.cpp
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimator.cpp(77,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimator.cpp(149,34): warning C4267: '초기화 중': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimator.cpp(154,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimator.cpp(173,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimator.cpp(188,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+C:\CWY\MHR_Portfolio\DirectX3D\Framework\Model\ModelAnimator.cpp(215,5): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  Player.cpp
+  코드를 생성하고 있습니다...
+DirectXTex.lib(DirectXTexConvert.obj) : warning LNK4099: '' PDB를 'DirectXTex.lib(DirectXTexConvert.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui.obj) : warning LNK4099: '' PDB를 'ImGui.lib(imgui.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(ImGuiFileDialog.obj) : warning LNK4099: '' PDB를 'ImGui.lib(ImGuiFileDialog.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_draw.obj) : warning LNK4099: '' PDB를 'ImGui.lib(imgui_draw.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+ImGui.lib(imgui_widgets.obj) : warning LNK4099: '' PDB를 'ImGui.lib(imgui_widgets.obj)' 또는 ''에서 찾을 수 없습니다. 디버그 정보가 없는 것처럼 개체를 링크합니다.
+  DirectX3D.vcxproj -> C:\CWY\MHR_Portfolio\x64\Debug\DirectX3D.exe

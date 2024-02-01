@@ -108,6 +108,8 @@ private:
 	Vector3 velocity = Vector3::Zero();
 	Vector3 targetPos = Vector3::Zero();
 	Vector3 prevMousePos = Vector3();
+	Vector3 prevPos = Vector3();
+
 
 	bool isTarget = true;
 

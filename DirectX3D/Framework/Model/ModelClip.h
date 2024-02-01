@@ -12,7 +12,7 @@ private:
     void Init();
     void Excute();
 
-    KeyFrame* GetKeyFrame(string boneName);
+    KeyFrame GetKeyFrame(string boneName);
     bool IsPlaying() { return playTime > 0; }
 
 
@@ -22,7 +22,7 @@ public:
     bool IsNearEnd(float scale = 1.0f ) { return playTime / duration > (0.99f / scale); }
     bool IsEnd()      { return playTime / duration > 1.0f; }
     float GetRatio() { return playTime / duration; }
-    void ResetPlayTime() { playTime = 0; }
+    void ResetPlayTime() { playTime = -100; }
     void SetPlayTime(float time) { playTime = time; }
 
     bool isFirstPlay() 
@@ -48,7 +48,7 @@ private:
 
     int playTimes = 0;
 
-    unordered_map<string, KeyFrame*> keyFrames;
+    unordered_map<string, KeyFrame> keyFrames;
 
     map<float, Event> events;
     map<float, Event>::iterator eventIter;

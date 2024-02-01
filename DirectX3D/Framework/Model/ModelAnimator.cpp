@@ -54,6 +54,14 @@ void ModelAnimator::GUIRender()
 
 void ModelAnimator::ReadClip(string clipName, UINT clipNum, string lockBone)
 {
+    if (clipName == "")
+    {
+        ModelClip* clip = new ModelClip();
+        clips.push_back(clip);
+        return;
+    }
+
+
     string path = "Models/Clips/" + name + "/"
         + clipName + to_string(clipNum) + ".clip";
 
@@ -68,18 +76,18 @@ void ModelAnimator::ReadClip(string clipName, UINT clipNum, string lockBone)
     UINT boneCount = reader->UInt();
     FOR(boneCount)
     {
-        KeyFrame* keyFrame = new KeyFrame();
-        keyFrame->boneName = reader->String();
+        KeyFrame keyFrame;
+        keyFrame.boneName = reader->String();
 
         UINT size = reader->UInt();
         if (size > 0)
         {
-            keyFrame->transforms.resize(size);
+            keyFrame.transforms.resize(size);
 
-            void* ptr = (void*)keyFrame->transforms.data();
+            void* ptr = (void*)keyFrame.transforms.data();
             reader->Byte(&ptr, sizeof(KeyTransform) * size);
         }
-        clip->keyFrames[keyFrame->boneName] = keyFrame;        
+        clip->keyFrames[keyFrame.boneName] = keyFrame;        
     }
 
     clips.push_back(clip);
@@ -211,10 +219,10 @@ void ModelAnimator::CreateClipTransform(UINT index)
         for (NodeData node : nodes)
         {
             Matrix animation;
-            KeyFrame* frame = clip->GetKeyFrame(node.name);
-            if (frame != nullptr)
+            KeyFrame frame = clip->GetKeyFrame(node.name);
+            if (frame.boneName != "")
             {
-                KeyTransform& transform = frame->transforms[i];
+                KeyTransform& transform = frame.transforms[i];
 
                 if (node.name == clip->lockBone)
                 {

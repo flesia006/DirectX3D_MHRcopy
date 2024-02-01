@@ -2,10 +2,10 @@
 
 ModelClip::~ModelClip()
 {
-    for (auto keyFrame : keyFrames)
-    {
-        delete keyFrame.second;
-    }
+   // for (auto keyFrame : keyFrames)
+   // {
+   //     delete keyFrame.second;
+   // }
 }
 
 void ModelClip::Init()
@@ -32,10 +32,13 @@ void ModelClip::Excute()
     eventIter++;
 }
 
-KeyFrame* ModelClip::GetKeyFrame(string boneName)
+KeyFrame ModelClip::GetKeyFrame(string boneName)
 {
     if (keyFrames.count(boneName) == 0)
-        return nullptr;
+    {
+        KeyFrame k;
+        return k;
+    }
 
     return keyFrames[boneName];
 }
