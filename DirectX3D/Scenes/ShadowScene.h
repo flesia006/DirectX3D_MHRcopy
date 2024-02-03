@@ -12,12 +12,14 @@ public:
     virtual void PostRender() override;
     virtual void GUIRender() override;
 
+    Valphalk* GetValphalk() { return valphalk; }
+
 private:
 
     Model* forest;
 
-    ModelAnimator* human;
     Player* player;
+    Valphalk* valphalk = nullptr;
 
     Shadow* shadow;
 

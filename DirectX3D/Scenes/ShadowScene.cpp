@@ -7,9 +7,12 @@ ShadowScene::ShadowScene()
     forest->Scale() *= 10;
     forest->UpdateWorld();
 
-    //human = new Model("Human");
-    player = new Player();
+    valphalk = new Valphalk();
+    valphalk->Pos().z -= 500.0f;
+    valphalk->Rot().y += XM_PI;
+    valphalk->UpdateWorld();
 
+    player = new Player();
     shadow = new Shadow();
 
     // 같이 알아보는 활용법 : 빛 호출 혹은 만들기 (<-빛 사용 방법)
@@ -43,8 +46,8 @@ void ShadowScene::Update()
     if (KEY_DOWN('4')) light->type = 3; 
 
     forest->UpdateWorld();
-    //human->UpdateWorld();
     player->Update();
+    valphalk->Update();
 }
 
 void ShadowScene::PreRender()
@@ -54,9 +57,10 @@ void ShadowScene::PreRender()
 
     //인간한테 뎁스 셰이더를 적용 (조건에 따른 셰이더 변화...등을 가진 조건 함수)
     player->SetShader(L"Light/DepthMap.hlsl");
-
+    valphalk->SetShader(L"Light/DepthMap.hlsl");
     //조건에 따라 픽셀이 바뀐 인간을 렌더...해서 텍스처를 준비
     player->Render();
+    valphalk->Render();
 }
 
 void ShadowScene::Render()
@@ -67,10 +71,11 @@ void ShadowScene::Render()
     //그림자를 받기 위한 셰이더 세팅
     forest->SetShader(L"Light/Shadow.hlsl");
     player->SetShader(L"Light/Shadow.hlsl");
-
+    valphalk->SetShader(L"Light/Shadow.hlsl");
     //셰이더가 세팅된 배경과 인간을 진짜 호출
     forest->Render();
     player->Render();
+    valphalk->Render();
 }
 
 void ShadowScene::PostRender()
@@ -81,4 +86,5 @@ void ShadowScene::PostRender()
 void ShadowScene::GUIRender()
 {
     player->GUIRender(); // 디버그 조작용
+    valphalk->GUIRender();
 }

@@ -160,13 +160,20 @@ using namespace GameMath;
 #include "Objects/Basic/Cube.h"
 #include "Objects/Basic/Sphere.h"
 #include "Objects/Basic/Cylinder.h"
+
 #include "Objects/Character/Item/Kunai.h"
 #include "Objects/Character/Human.h"
 #include "Objects/Character/Naruto.h"
 #include "Objects/Character/Robot.h"
 #include "Objects/Character/Player.h"
+#include "Objects/Character/Valphalk.h"
 
 #include "Objects/Actor/ActorUI.h"
+
+#include "Objects/Particle/Particle.h"
+#include "Objects/Particle/Rain.h"
+#include "Objects/Particle/Spark.h"
+#include "Objects/Particle/Sprite.h"
 
 #include "Objects/Manager/BlockManager.h"
 #include "Objects/Manager/RobotManager.h"

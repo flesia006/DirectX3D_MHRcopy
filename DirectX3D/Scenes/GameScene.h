@@ -17,7 +17,7 @@ private:
 private:
     Naruto* naruto = nullptr;  
     Player* player = nullptr;
-    ModelAnimator* boss = nullptr;
+    
 
     Model* ground = nullptr;
     SkyBox* sky = nullptr;

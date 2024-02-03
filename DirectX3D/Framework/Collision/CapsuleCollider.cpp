@@ -124,6 +124,28 @@ bool CapsuleCollider::IsSphereCollision(SphereCollider* collider)
     return distance <= (Radius() + collider->Radius());
 }
 
+bool CapsuleCollider::IsSphereCollision(SphereCollider* collider, Contact* contactPos)
+{
+    Vector3 dir = Up();
+    Vector3 pa = GlobalPos() - dir * Height() * 0.5f;
+    Vector3 pb = GlobalPos() + dir * Height() * 0.5f;
+
+    Vector3 P = collider->GlobalPos();
+
+    Vector3 pointOnLine = ClosestPointOnLine(pa, pb, P);
+    float distance = Distance(P, pointOnLine);
+
+    if (distance <= (Radius() + collider->Radius()))
+    {
+        contactPos->hitPoint = pointOnLine;
+        return true;
+    }
+    else
+        return false;
+}
+
+
+
 bool CapsuleCollider::IsCapsuleCollision(CapsuleCollider* collider)
 {
     // 경우를 나눈다 
@@ -163,6 +185,8 @@ bool CapsuleCollider::IsCapsuleCollision(CapsuleCollider* collider)
 
     return distance <= (Radius() + collider->Radius());
 }
+
+
 
 void CapsuleCollider::MakeMesh()
 {
