@@ -39,6 +39,7 @@ private:
 	void Rotate();
 	void Attack(); // TODO :  인자로 모션 배율 넣기
 	void SetAnimation();
+	void Roll();
 
 	void SetState(State state);
 	void Throw();
@@ -130,6 +131,8 @@ private:
 	float rad;
 
 	int loopApply = 334;
+
+
 
 };
 

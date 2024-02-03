@@ -328,6 +328,11 @@ void Player::Move()
 	Vector3 CAMLeft = CAM->Right();
 	Vector3 CAMRight = CAM->Right() * -1;
 
+	Vector3 CAMLeftForward = CAM->Back() + CAM->Right();
+	Vector3 CAMRightForward = CAM->Back() + CAM->Left();
+	Vector3 CAMLeftBack = CAM->Right() + CAM->Forward();
+	Vector3 CAMRightBack = CAM->Left() + CAM->Forward();
+
 	Vector3 forward = Back();//모델 기준으로 앞 따오기
 	if (KEY_PRESS('W'))
 	{
@@ -381,17 +386,64 @@ void Player::Move()
 			Rot().y -= rotSpeed * DELTA;
 		}
 	}
+	if (KEY_PRESS('A')&& KEY_PRESS('W') || KEY_PRESS('W') && KEY_PRESS('A'))
+	{
+		Vector3 cross = Cross(forward, CAMLeftForward);
+
+		if (cross.y < 0)
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+	if (KEY_PRESS('D') && KEY_PRESS('W') || KEY_PRESS('W') && KEY_PRESS('D'))
+	{
+		Vector3 cross = Cross(forward, CAMRightForward);
+
+		if (cross.y < 0)
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+	if (KEY_PRESS('A') && KEY_PRESS('S') || KEY_PRESS('S') && KEY_PRESS('A'))
+	{
+		Vector3 cross = Cross(forward, CAMLeftBack);
+
+		if (cross.y < 0)
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+	if (KEY_PRESS('D') && KEY_PRESS('S') || KEY_PRESS('S') && KEY_PRESS('D'))
+	{
+		Vector3 cross = Cross(forward, CAMRightBack);
+
+		if (cross.y < 0)
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
 
 	//if (!isMoveZ) // 전후 이동 중이 아니면
 	//	velocity.z = Lerp(velocity.z, 0, deceleration * DELTA); //보간에 의해 감속
 	//
 	//if (!isMoveX) // 좌우이동에 적용
 	//	velocity.x = Lerp(velocity.x, 0, deceleration * DELTA);
-
-
-
-
-	
 }
 
 void Player::ResetPlayTime()
@@ -423,6 +475,57 @@ void Player::Attack() // 충돌판정 함수
 
 void Player::SetAnimation()
 {
+}
+
+void Player::Roll()
+{
+	Vector3 CAMForward = CAM->Back();
+	Vector3 CAMBack = CAM->Back() * -1;
+	Vector3 CAMLeft = CAM->Right();
+	Vector3 CAMRight = CAM->Right() * -1;
+
+	Vector3 CAMLeftForward = CAM->Back() + CAM->Right();
+	Vector3 CAMRightForward = CAM->Back() + CAM->Left();
+	Vector3 CAMLeftBack = CAM->Right() + CAM->Forward();
+	Vector3 CAMRightBack = CAM->Left() + CAM->Forward();
+
+	Vector3 forward = Back();
+
+	if (KEY_PRESS('W'))
+	{
+		Rot().y;
+	}
+	if (KEY_PRESS('S'))
+	{
+		Rot().y;
+	}
+	if (KEY_PRESS('A'))
+	{
+		Rot().y;
+	}
+	if (KEY_PRESS('D'))
+	{
+		Rot().y;
+	}
+	if (KEY_PRESS('W') && KEY_PRESS('A') || KEY_PRESS('A') && KEY_PRESS('W')) // 좌상 구르기
+	{
+		Rot().y = CAMLeftForward.y;
+	}
+	if (KEY_PRESS('W') && KEY_PRESS('D') || KEY_PRESS('D') && KEY_PRESS('W')) // 우상 구르기
+	{
+		Rot().y = CAMRightForward.y;
+	}
+	if (KEY_PRESS('S') && KEY_PRESS('A') || KEY_PRESS('A') && KEY_PRESS('S')) // 좌하 구르기
+	{
+		Rot().y = CAMLeftBack.y;
+	}
+	if (KEY_PRESS('S') && KEY_PRESS('D') || KEY_PRESS('D') && KEY_PRESS('S')) // 우하 구르기
+	{
+		Rot().y = CAMRightBack.y;
+	}
+
+
+	SetState(L_010);
 }
 
 void Player::SetState(State state)
@@ -509,7 +612,7 @@ void Player::L001()
 		SetState(L_101);
 
 	if (KEY_DOWN(VK_SPACE))
-		SetState(L_010);
+		Roll();
 }
 
 void Player::L002()
@@ -526,6 +629,9 @@ void Player::L004()
 	//
 	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
 	{
+		if(KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D'))
+		return;
+
 		SetState(L_008);
 		return;
 	}
@@ -552,7 +658,7 @@ void Player::L004()
 
 	if (KEY_DOWN(VK_SPACE))
 	{
-		SetState(L_010);
+		Roll();
 		return;
 	}
 
@@ -570,6 +676,9 @@ void Player::L005()
 	Rotate();
 	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
 	{
+		if (KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D'))
+			return;
+
 		SetState(L_008);
 		return;
 	}
@@ -589,7 +698,7 @@ void Player::L005()
 	}
 
 	if (KEY_DOWN(VK_SPACE))
-		SetState(L_010);
+		Roll();
 }
 
 void Player::L006()
@@ -614,7 +723,7 @@ void Player::L008()
 		}
 		if (KEY_DOWN(VK_SPACE))
 		{
-			SetState(L_010);
+			Roll();
 		}
 	}
 
@@ -675,7 +784,7 @@ void Player::L101()
 		}
 		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			SetState(L_010);
+			Roll();
 		}
 	}
 
@@ -715,7 +824,7 @@ void Player::L102()
 		}
 		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			SetState(L_010);
+			Roll();
 		}
 	}
 
@@ -746,7 +855,7 @@ void Player::L103() // 베어내리기
 		}
 		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			SetState(L_010);
+			Roll();
 		}
 	}
 
@@ -778,7 +887,7 @@ void Player::L104()
 		}
 		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			SetState(L_010);
+			Roll();
 		}
 	}
 
@@ -809,7 +918,7 @@ void Player::L105() // 배어올리기
 			SetState(L_103);
 
 		else if (KEY_FRONT(Keyboard::SPACE))
-			SetState(L_010);
+			Roll();
 
 	}
 
@@ -842,7 +951,7 @@ void Player::L106() // 기인 베기 1
 		}
 		else if (KEY_FRONT(Keyboard::SPACE))
 		{
-			SetState(L_010);
+			Roll();
 		}
 	}
 
