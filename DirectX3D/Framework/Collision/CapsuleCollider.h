@@ -12,6 +12,8 @@ public:
     virtual bool IsSphereCollision(SphereCollider* collider) override;
     virtual bool IsCapsuleCollision(CapsuleCollider* collider) override;
 
+    bool IsSphereCollision(SphereCollider* collider, Contact* contact );
+
     float Radius() { return radius * max(GlobalScale().x, max(GlobalScale().y, GlobalScale().z)); }
     float Height() { return height * GlobalScale().y; }
 

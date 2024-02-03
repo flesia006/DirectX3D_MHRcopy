@@ -1,15 +1,24 @@
 #include "Framework.h"
 #include "Player.h"
+#include "Scenes/ShadowScene.h"
 
 Player::Player() : ModelAnimator("Player")
 {
 	mainHand = new Transform();
+	swordCollider = new CapsuleCollider(2.0f, 100.0f);
+	swordCollider->Rot().x += XM_PIDIV2;
+	swordCollider->SetParent(mainHand);
+	swordCollider->Pos().z -= 100.0f;
+	swordCollider->Scale() *= 3.0f;
+
 	head = new Transform();
 	realPos = new Transform();
 	lastPos = new Transform();
 	longSword = new Model("longSwd");
 	longSword->SetParent(mainHand);
-	
+
+	particle = new Spark(L"Textures/Effect/Rain.png", true);
+
 	tmpCollider = new SphereCollider();
 	tmpCollider->Scale() *= 3.0f;
 	tmpCollider->SetParent(head);
@@ -25,6 +34,7 @@ Player::~Player()
 	delete head;
 	delete realPos;
 	delete tmpCollider;
+	delete particle;
 }
 
 void Player::Update()
@@ -32,11 +42,9 @@ void Player::Update()
 	Control();
 	ResetPlayTime();
 
-
 	mainHand->SetWorld(GetTransformByNode(108));
 	realPos->Pos() = GetTranslationByNode(1);	
 	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
-
 
 	realPos->UpdateWorld();
 	lastPos->UpdateWorld();
@@ -44,18 +52,25 @@ void Player::Update()
 	longSword->UpdateWorld();
 	head->UpdateWorld();
 	tmpCollider->UpdateWorld();
+	swordCollider->UpdateWorld();
+	particle->Update();
 }
 
 void Player::Render()
 {
 	ModelAnimator::Render();
 	tmpCollider->Render();
+	swordCollider->Render();
 	longSword->Render();
+
+	particle->Render();
+
 }
 
 void Player::GUIRender()
 {
 	ModelAnimator::GUIRender();
+	particle->GUIRender();
 
 	float t = GetClip(L_004)->GetPlaytime();
 	ImGui::DragFloat("pt_0", &t); 
@@ -131,6 +146,8 @@ void Player::PostRender()
 
 	string fps = "Status : " + strStatus.at((UINT)curState);
 	Font::Get()->RenderText(fps, { 150, WIN_HEIGHT - 30 });
+
+
 }
 
 void Player::Control()
@@ -391,11 +408,20 @@ void Player::Rotate()
 	Vector3 newForward;
 	newForward = Lerp(Forward(), CAM->Back(), rotSpeed * DELTA);
 	float rot = atan2(newForward.x, newForward.z);
-	//Rot().y = rot;
+	Rot().y = rot;
 }
 
-void Player::Attack()
+void Player::Attack() // 충돌판정 함수
 {
+	Valphalk* val = 
+		dynamic_cast<ShadowScene*>(SceneManager::Get()->Add("shadow"))->GetValphalk();
+
+	Contact contact;
+
+	if (swordCollider->IsSphereCollision(val->GetHead(), &contact))
+	{
+		particle->Play(contact.hitPoint);
+	}		
 }
 
 void Player::SetAnimation()
@@ -541,7 +567,11 @@ void Player::L004()
 
 void Player::L005()
 {
-	PLAY;
+	if (INIT)
+	{
+		PlayClip(curState);
+		Rot().y = CAM->Rot().y + XM_PI;
+	}
 
 	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
 	{
@@ -549,7 +579,7 @@ void Player::L005()
 		return;
 	}
 
-	if (RATIO < 0.2)
+	if (RATIO < 0.6)
 		Rotate();
 
 	if (RATIO > 0.94 && (KEY_PRESS('W') ||  KEY_PRESS('S')|| KEY_PRESS('A')|| KEY_PRESS('D')))
@@ -579,7 +609,7 @@ void Player::L008()
 {
 	PLAY;
 
-	Rotate();
+	//Rotate();
 
 	if (RATIO > 0.5 && RATIO <= 0.94)
 	{
@@ -631,6 +661,7 @@ void Player::L101()
 	if (RATIO < 0.3)
 		Rot().y = Lerp(Rot().y, rad, 0.001f);
 
+	Attack();
 
 	// 해당 클립이 60% 이상 재생됐으면 if 조건 충족
 	if (RATIO > 0.6)
@@ -667,6 +698,8 @@ void Player::L102()
 		PlayClip(L_102);
 		MotionRotate(30);
 	}
+
+	Attack();
 
 	if (RATIO < 0.3)
 		Rot().y = Lerp(Rot().y, rad, 0.001f);
@@ -705,6 +738,8 @@ void Player::L103() // 베어내리기
 		MotionRotate(30);
 	}
 
+	Attack();
+
 	if (RATIO < 0.3) // 30%
 		Rot().y = Lerp(Rot().y, rad, 0.001f);
 
@@ -730,6 +765,7 @@ void Player::L104()
 {
 	PLAY;
 
+	Attack();
 
 	if (RATIO > 0.6)
 	{
@@ -761,6 +797,8 @@ void Player::L105() // 배어올리기
 {
 	PLAY;
 
+	Attack();
+
 	if (RATIO > 0.6)
 	{
 		// 세로베기
@@ -787,6 +825,8 @@ void Player::L105() // 배어올리기
 void Player::L106() // 기인 베기 1
 {
 	PLAY;
+
+	Attack();
 
 	if (RATIO > 0.6)
 	{

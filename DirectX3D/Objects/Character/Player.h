@@ -1,4 +1,6 @@
 #pragma once
+
+class Particle;
 class Player : public ModelAnimator
 {
 private:
@@ -35,7 +37,7 @@ private:
 	void ResetPlayTime();
 
 	void Rotate();
-	void Attack();
+	void Attack(); // TODO :  인자로 모션 배율 넣기
 	void SetAnimation();
 
 	void SetState(State state);
@@ -90,17 +92,19 @@ private:
 	Transform* head = nullptr;
 
 	SphereCollider* tmpCollider = nullptr;
+	CapsuleCollider* swordCollider = nullptr;
 
 	Model* longSword = nullptr;
 
 	Shadow* shadow;
+	Particle* particle;
 	LightBuffer::Light* light; 
 
 	State curState = L_101;
 	State preState = L_101;
 
 	float moveSpeed = 500;
-	float rotSpeed = 5.0f;
+	float rotSpeed = 10.0f;
 	float deceleration = 5;
 
 	const float motionSpeed = 1.5f;
