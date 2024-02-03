@@ -270,9 +270,6 @@ void Player::Move()
 	bool isMoveX = false; // 좌우 이동 중 아님
 
 
-
-
-
 	if (KEY_PRESS('W'))
 	{
 		//Pos() += Back() * moveSpeed * DELTA;
@@ -408,7 +405,7 @@ void Player::Rotate()
 	Vector3 newForward;
 	newForward = Lerp(Forward(), CAM->Back(), rotSpeed * DELTA);
 	float rot = atan2(newForward.x, newForward.z);
-	Rot().y = rot;
+	//Rot().y = rot;
 }
 
 void Player::Attack() // 충돌판정 함수
@@ -567,12 +564,10 @@ void Player::L004()
 
 void Player::L005()
 {
-	if (INIT)
-	{
-		PlayClip(curState);
-		Rot().y = CAM->Rot().y + XM_PI;
-	}
+	PLAY;
 
+	Move();
+	Rotate();
 	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
 	{
 		SetState(L_008);

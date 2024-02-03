@@ -3,7 +3,7 @@
 
 ModelExportScene::ModelExportScene()
 {
-    string name = "Valphalk";
+    string name = "Player";
     string file = "Models/FBX/" + name + ".fbx";
     ModelExporter* exporter;
     string clipName;
@@ -13,7 +13,7 @@ ModelExportScene::ModelExportScene()
     exporter->ExportMesh();
     delete exporter;    
     
-    ExportAnimation("stun", name);
+    ExportAnimation("L_005_NoMove", name);
 //    ExportAnimation("L_127", name);
 //    ExportAnimation("L_128", name);
 //    ExportAnimation("L_130", name);

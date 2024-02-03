@@ -25,7 +25,8 @@ GameManager::GameManager()
     Create();
 
     //SceneManager::Get()->Create("Grid", new GridScene());
-//  SceneManager::Get()->Create("ModelExport", new ModelExportScene());
+//    SceneManager::Get()->Create("ModelExport", new ModelExportScene());
+//    SceneManager::Get()->Add("ModelExport");
 
 //    SceneManager::Get()->Create("Cube", new CubeScene());
 //    SceneManager::Get()->Create("Sphere", new SphereScene());
@@ -38,7 +39,6 @@ GameManager::GameManager()
     SceneManager::Get()->Create("shadow", new ShadowScene());
 
 //    SceneManager::Get()->Add("Grid");
-//    SceneManager::Get()->Add("ModelExport");
 //    SceneManager::Get()->Add("Instancing");
 //    SceneManager::Get()->Add("game");
     SceneManager::Get()->Add("shadow");
