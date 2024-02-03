@@ -408,7 +408,7 @@ void Player::Rotate()
 	Vector3 newForward;
 	newForward = Lerp(Forward(), CAM->Back(), rotSpeed * DELTA);
 	float rot = atan2(newForward.x, newForward.z);
-	//Rot().y = rot;
+	Rot().y = rot;
 }
 
 void Player::Attack() // 충돌판정 함수
@@ -567,7 +567,11 @@ void Player::L004()
 
 void Player::L005()
 {
-	PLAY;
+	if (INIT)
+	{
+		PlayClip(curState);
+		Rot().y = CAM->Rot().y + XM_PI;
+	}
 
 	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
 	{
@@ -605,7 +609,7 @@ void Player::L008()
 {
 	PLAY;
 
-	Rotate();
+	//Rotate();
 
 	if (RATIO > 0.5 && RATIO <= 0.94)
 	{

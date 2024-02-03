@@ -1,5 +1,6 @@
 #include "Framework.h"
 #include "ShadowScene.h"
+#include "Objects/Character/Valphalk.h"
 
 ShadowScene::ShadowScene()
 {
@@ -8,12 +9,13 @@ ShadowScene::ShadowScene()
     forest->UpdateWorld();
 
     valphalk = new Valphalk();
-    valphalk->Pos().z -= 500.0f;
+    valphalk->Pos().z -= 1500.0f;
     valphalk->Rot().y += XM_PI;
     valphalk->UpdateWorld();
 
     player = new Player();
     shadow = new Shadow();
+    UIManager::Get();
 
     // 같이 알아보는 활용법 : 빛 호출 혹은 만들기 (<-빛 사용 방법)
 
@@ -48,6 +50,8 @@ void ShadowScene::Update()
     forest->UpdateWorld();
     player->Update();
     valphalk->Update();
+    UIManager::Get()->Update();
+
 }
 
 void ShadowScene::PreRender()
@@ -76,11 +80,13 @@ void ShadowScene::Render()
     forest->Render();
     player->Render();
     valphalk->Render();
+    
 }
 
 void ShadowScene::PostRender()
 {
     //shadow->PostRender(); // 쿼드 출력용
+    UIManager::Get()->PostRender();
 }
 
 void ShadowScene::GUIRender()
