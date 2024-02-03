@@ -282,6 +282,7 @@
     <ClInclude Include="Objects\Manager\UIManager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Objects\Particle\Particle.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -295,6 +296,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Objects\Character\Valphalk.h">
+=======
+    <ClInclude Include="Objects\Enemy\Boss.h">
+>>>>>>> 8b6c123a5a520e3b2834bb07fb2900331d5ed1d5
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -536,6 +540,7 @@
     <ClCompile Include="Objects\Manager\UIManager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Objects\Particle\Particle.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -549,6 +554,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\Character\Valphalk.cpp">
+=======
+    <ClCompile Include="Objects\Enemy\Boss.cpp">
+>>>>>>> 8b6c123a5a520e3b2834bb07fb2900331d5ed1d5
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

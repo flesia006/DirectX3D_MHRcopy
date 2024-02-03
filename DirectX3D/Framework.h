@@ -166,7 +166,11 @@ using namespace GameMath;
 #include "Objects/Character/Naruto.h"
 #include "Objects/Character/Robot.h"
 #include "Objects/Character/Player.h"
+<<<<<<< HEAD
 #include "Objects/Character/Valphalk.h"
+=======
+#include "Objects/Enemy/Boss.h"
+>>>>>>> 8b6c123a5a520e3b2834bb07fb2900331d5ed1d5
 
 #include "Objects/Actor/ActorUI.h"
 
