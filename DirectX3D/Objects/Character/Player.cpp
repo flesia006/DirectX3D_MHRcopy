@@ -14,6 +14,7 @@ Player::Player() : ModelAnimator("Player")
 	head = new Transform();
 	realPos = new Transform();
 	lastPos = new Transform();
+	root = new Transform();
 	longSword = new Model("longSwd");
 	longSword->SetParent(mainHand);
 
@@ -42,18 +43,29 @@ void Player::Update()
 	Control();
 	ResetPlayTime();
 
-	mainHand->SetWorld(GetTransformByNode(108));
-	realPos->Pos() = GetTranslationByNode(1);	
-	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
 
+
+	UpdateWorlds();
+	particle->Update();
+}
+
+void Player::UpdateWorlds()
+{
+
+	mainHand->SetWorld(GetTransformByNode(108));
+	root->Rot() = GetRotationByNode(1);
+	realPos->Pos() = GetTranslationByNode(1);
+
+	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
+	ModelAnimator::Update();
+
+	root->UpdateWorld();
 	realPos->UpdateWorld();
 	lastPos->UpdateWorld();
-	ModelAnimator::Update();
 	longSword->UpdateWorld();
 	head->UpdateWorld();
 	tmpCollider->UpdateWorld();
 	swordCollider->UpdateWorld();
-	particle->Update();
 }
 
 void Player::Render()
@@ -72,17 +84,24 @@ void Player::GUIRender()
 	ModelAnimator::GUIRender();
 	particle->GUIRender();
 
-	float t = GetClip(L_004)->GetPlaytime();
-	ImGui::DragFloat("pt_0", &t); 
-	Vector3 pos = realPos->Pos();
+//	Vector3 Forward = root->Forward();
+//	float t = atan2(Forward.x, Forward.z);
+	float t = root->Rot().y;
+	ImGui::DragFloat("Player.y", &t); 
 
-	ImGui::DragFloat3("RealPos", (float*)&pos);
+	Vector3 CAMForward = CAM->Forward();	
+	float y = atan2(CAMForward.x, CAMForward.z);
+	ImGui::DragFloat("CAM.y", &y);
 
-	int U = Keyboard::Get()->ReturnFirst();
-	ImGui::SliderInt("keyboard", &U, 0, 200);
-
-
-	ImGui::SliderInt("node", &node, 0, 100);
+	//Vector3 pos = realPos->Pos();
+	//
+	//ImGui::DragFloat3("RealPos", (float*)&pos);
+	//
+	//int U = Keyboard::Get()->ReturnFirst();
+	//ImGui::SliderInt("keyboard", &U, 0, 200);
+	//
+	//
+	//ImGui::SliderInt("node", &node, 0, 100);
 
 
 	longSword->GUIRender();

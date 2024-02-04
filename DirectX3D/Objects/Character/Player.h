@@ -17,6 +17,10 @@ private:
 		L_120, L_121, L_122, L_123,
 	};
 
+	enum Rotation
+	{
+		ºÏ, ºÏµ¿, µ¿, ³²µ¿, ³², ³²¼­, ¼­, ºÏ¼­		 
+	};
 
 
 public:
@@ -25,6 +29,7 @@ public:
 
 
 	void Update();
+	void UpdateWorlds();
 	void PreRender();
 	void Render();
 	void GUIRender();

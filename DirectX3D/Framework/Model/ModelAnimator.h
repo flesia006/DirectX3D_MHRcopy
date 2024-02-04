@@ -49,6 +49,7 @@ public:
 
     Matrix GetTransformByNode(int nodeIndex);
     Vector3 GetTranslationByNode(int nodeIndex);
+    Vector3 GetRotationByNode(int nodeIndex);
 
     ModelClip* GetClip(UINT index) { return clips[index]; }
     UINT GetClipSize() { return clips.size(); }
