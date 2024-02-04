@@ -31,6 +31,9 @@ ShadowScene::ShadowScene()
     light->length; 
     light->inner;   //조명 집중 범위 (빛이 집중되어 쏘이는 범위...의 비중)
     light->outer;   //조명 외곽 범위 (빛이 흩어져서 비치는 범위...의 비중)
+
+    skyBox = new SkyBox(L"Textures/Landscape/BlueSky.dds");
+
 }
 
 ShadowScene::~ShadowScene()
@@ -38,6 +41,8 @@ ShadowScene::~ShadowScene()
     delete forest;
     delete player;
     delete shadow;
+    delete skyBox;
+
 }
 
 void ShadowScene::Update()
@@ -69,6 +74,8 @@ void ShadowScene::PreRender()
 
 void ShadowScene::Render()
 {
+    skyBox->Render();
+
     //위 함수에서 만들어진 텍스처를 그림자에서 렌더 대상으로 세팅
     shadow->SetRender();
 

@@ -41,8 +41,11 @@ void Player::Update()
 {
 	Control();
 	ResetPlayTime();
-
+	if (curState != S_003);
 	mainHand->SetWorld(GetTransformByNode(108));
+	if(curState==S_003)
+		mainHand->SetWorld(GetTransformByNode(35));
+
 	realPos->Pos() = GetTranslationByNode(1);	
 	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
 
@@ -143,6 +146,9 @@ void Player::PostRender()
 	strStatus.push_back("L_109 기인큰회전베기");
 	strStatus.push_back("L_110 기인내디뎌베기");
 	strStatus.push_back("L_111 일자베기");
+	strStatus.push_back("S_003 납도 달리기");
+	strStatus.push_back("S_008 제자리 납도");
+	strStatus.push_back("S_009 걸으면서 납도");
 
 	string fps = "Status : " + strStatus.at((UINT)curState);
 	Font::Get()->RenderText(fps, { 150, WIN_HEIGHT - 30 });
@@ -153,7 +159,16 @@ void Player::PostRender()
 void Player::Control()
 {
 	switch (curState)
-	{
+	{	
+	case Player::S_003:
+		S003();
+		break;
+	case Player::S_008:
+		S008();
+		break;
+	case Player::S_009:
+		S009();
+		break;
 					// 이동 모션
 	case Player::L_001:
 		L001();
@@ -273,45 +288,27 @@ void Player::Move()
 	if (KEY_PRESS('W'))
 	{
 		//Pos() += Back() * moveSpeed * DELTA;
-
 		velocity.z = 1;//+= DELTA; // 속도(범용변수)에 델타만큼 전후값 주기		
 		isMoveZ = true; //전후 이동 수행 중
 	}
 
 	if (KEY_PRESS('S'))
 	{
-		//Pos() += Forward() * moveSpeed * DELTA;
-
-		velocity.z = 1;// DELTA;
-		isMoveZ = true; //전후 이동 수행 중
+		velocity.z = 1;
+		isMoveZ = true;
 	}
 
 	if (KEY_PRESS('A'))
-	{
-		//Pos() += Right() * moveSpeed * DELTA;
-		velocity.z = 1;// DELTA;
-
-		//velocity.x = -1;//velocity.x -= 1;// DELTA;
-		isMoveX = true; //좌우 이동 수행 중
+	{		
+		velocity.z = 1;		
+		isMoveX = true;
 	}
 
 	if (KEY_PRESS('D'))
-	{
-		//Pos() += Left() * moveSpeed * DELTA;
-		velocity.z = 1;// DELTA;
-
-		//velocity.x = 1; //velocity.x += 1;// DELTA;
-		isMoveX = true; //좌우 이동 수행 중
+	{		
+		velocity.z = 1;		
+		isMoveX = true;
 	}
-	if (KEY_PRESS('Q'))
-	{
-		Rot().y -= 2 * DELTA;
-	}
-	if (KEY_PRESS('E'))
-	{
-		Rot().y += 2 * DELTA;
-	}
-
 
 	if (velocity.Length() > 1) //속도의 전체 가치가 1을 넘으면 (선으로 표현한 벡터의 길이가 1 초과)
 		velocity.Normalize(); //정규화
@@ -349,39 +346,39 @@ void Player::Move()
 	}
 	if (KEY_PRESS('S'))
 	{
-		Vector3 cross = Cross(forward, CAMBack);//방향차이에서 나온 법선
+		Vector3 cross = Cross(forward, CAMBack);
 
-		if (cross.y < 0)//법선이 밑이다 --> 내가 목적 방향보다 오른쪽을 보는 중이다 ----> 외적
+		if (cross.y < 0)
 		{
 			Rot().y += rotSpeed * DELTA;
 		}
-		else if (cross.y > 0)//반대의 경우
+		else if (cross.y > 0)
 		{
 			Rot().y -= rotSpeed * DELTA;
 		}
 	}
 	if (KEY_PRESS('A'))
 	{
-		Vector3 cross = Cross(forward, CAMLeft);//방향차이에서 나온 법선
+		Vector3 cross = Cross(forward, CAMLeft);
 
-		if (cross.y < 0)//법선이 밑이다 --> 내가 목적 방향보다 오른쪽을 보는 중이다 ----> 외적
+		if (cross.y < 0)
 		{
 			Rot().y += rotSpeed * DELTA;
 		}
-		else if (cross.y > 0)//반대의 경우
+		else if (cross.y > 0)
 		{
 			Rot().y -= rotSpeed * DELTA;
 		}
 	}
 	if (KEY_PRESS('D'))
 	{
-		Vector3 cross = Cross(forward, CAMRight);//방향차이에서 나온 법선
+		Vector3 cross = Cross(forward, CAMRight);
 
-		if (cross.y < 0)//법선이 밑이다 --> 내가 목적 방향보다 오른쪽을 보는 중이다 ----> 외적
+		if (cross.y < 0)
 		{
 			Rot().y += rotSpeed * DELTA;
 		}
-		else if (cross.y > 0)//반대의 경우
+		else if (cross.y > 0)
 		{
 			Rot().y -= rotSpeed * DELTA;
 		}
@@ -459,9 +456,8 @@ void Player::Rotate()
 	float rot = atan2(newForward.x, newForward.z);
 	//Rot().y = rot;
 
-
-	//캐릭터 기준 왼쪽 법선
-	//newForward = Cross(forward, CAMBack);
+	//캐릭터 기준 왼쪽 법선 구하기 식 오른쪽이면 Forward(),CAM->Forawrd 일듯
+	//newForward = Cross(Back(), CAM->Back);
 	//float rot = atan2(newForward.x, newForward.z);
 	//Rot().y = rot;
 
@@ -486,20 +482,14 @@ void Player::SetAnimation()
 
 void Player::Roll()
 {
-	Vector3 CAMForward = CAM->Back();
-	Vector3 CAMBack = CAM->Back() * -1;
-	Vector3 CAMLeft = CAM->Right();
-	Vector3 CAMRight = CAM->Right() * -1;
-
 	Vector3 CAMLeftForward = CAM->Back() + CAM->Right();
 	Vector3 CAMRightForward = CAM->Back() + CAM->Left();
 	Vector3 CAMLeftBack = CAM->Right() + CAM->Forward();
 	Vector3 CAMRightBack = CAM->Left() + CAM->Forward();
 
 	Vector3 forward = Back();
-
 	Vector3 newForward;
-	//Rot().y = rot;
+	
 	if (KEY_PRESS('W'))
 	{
 		newForward = Lerp(Forward(), CAM->Back(), rotSpeed * 10);
@@ -548,9 +538,8 @@ void Player::Roll()
 		float rot = atan2(newForward.x, newForward.z);
 		Rot().y = rot;
 	}
+
 	SetState(L_010);
-
-
 }
 
 void Player::SetState(State state)
@@ -618,12 +607,65 @@ void Player::ReadClips()
 	ReadClip("L_121");
 	ReadClip("L_122");
 	ReadClip("L_123");
+	ReadClip("S_003");
+	ReadClip("S_008");
+	ReadClip("S_009");
 }
 
 void Player::RecordLastPos()
 {
 	//Pos() = root->GlobalPos();
 	Pos() = GetTranslationByNode(1);
+}
+
+void Player::S003()
+{
+	PLAY;
+	Move();
+	Rotate();
+
+	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D')) // 이동 중 키를 뗄 때
+	{
+		if (KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D')) // 다른 키가 아직 눌려있으면 돌아간다.
+			return;
+		// 모든 이동키가 입력되지 않을 시 멈춤
+		SetState(L_008);
+		return;
+	}
+
+	if (KEY_FRONT(Keyboard::LMB))
+	{
+		SetState(L_101);
+		return;
+	}
+
+	if (KEY_DOWN(VK_SPACE))
+		Roll();
+}
+
+void Player::S008()
+{
+	PLAY;	
+}
+
+void Player::S009()
+{
+	PLAY;
+	Move();
+	Rotate();
+
+	if (RATIO > 0.94 && (KEY_PRESS('W') || KEY_PRESS('S') || KEY_PRESS('A') || KEY_PRESS('D')))
+	{
+		SetState(S_003);
+		return;
+	}
+
+	if (RATIO > 0.98)
+	{
+		ReturnIdle();
+	}
+
+	
 }
 
 void Player::L001() // 발도상태 대기
@@ -651,8 +693,8 @@ void Player::L001() // 발도상태 대기
 		SetState(L_103);
 		return;
 	}
-	if (KEY_DOWN(VK_LSHIFT))
-		SetState(L_106);
+	if (KEY_PRESS(VK_LSHIFT))
+		SetState(L_003);
 	if (KEY_DOWN(VK_SPACE))
 		Roll();
 }
@@ -671,18 +713,19 @@ void Player::L004() // 발도상태 걷기 중
 {
 	PLAY;
 	//
-	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
+	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D')) // 이동 중 키를 뗄 때
 	{
-		if(KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D'))
+		if(KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D')) // 다른 키가 아직 눌려있으면 돌아간다.
 		return;
-
+		// 모든 이동키가 입력되지 않을 시 멈춤
 		SetState(L_008);
 		return;
 	}
 
 	Move();
 	Rotate();
-
+	if (KEY_PRESS(VK_LSHIFT))
+		SetState(S_009);
 	// 101 내디뎌 베기
 	if (KEY_FRONT(Keyboard::LMB))
 	{		
@@ -711,7 +754,7 @@ void Player::L004() // 발도상태 걷기 중
 	{
 
 	}
-
+	// 010 구르기
 	if (KEY_DOWN(VK_SPACE))
 	{
 		Roll();
@@ -730,6 +773,7 @@ void Player::L005() // 발도상태 걷기 시작 (발돋움)
 
 	Move();
 	Rotate();
+
 	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
 	{
 		if (KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D'))
@@ -757,19 +801,17 @@ void Player::L005() // 발도상태 걷기 시작 (발돋움)
 		Roll();
 }
 
-void Player::L006() // 더미
+void Player::L006() // 더미 (사용X)
 {
 }
 
-void Player::L007() // 더미
+void Player::L007() // 더미 (사용X)
 {
 }
 
 void Player::L008() // 멈춤
 {
 	PLAY;
-
-	//Rotate();
 
 	if (RATIO > 0.5 && RATIO <= 0.94)
 	{
@@ -928,7 +970,7 @@ void Player::L104() // 찌르기
 
 	Attack();
 
-	if (RATIO > 0.6)
+	if (RATIO > 0.45)
 	{
 		if (KEY_FRONT(Keyboard::LMB))
 		{
@@ -954,7 +996,7 @@ void Player::L104() // 찌르기
 	}
 }
 
-void Player::L105() // 배어올리기
+void Player::L105() // 베어 올리기
 {
 	PLAY;
 
@@ -976,7 +1018,6 @@ void Player::L105() // 배어올리기
 
 		else if (KEY_FRONT(Keyboard::SPACE))
 			Roll();
-
 	}
 
 	if (RATIO > 0.98)
@@ -1017,7 +1058,7 @@ void Player::L106() // 기인 베기 1
 }
 
 void Player::L107()
-{
+{		
 }
 
 void Player::L108()
@@ -1030,6 +1071,40 @@ void Player::L109()
 
 void Player::L110()
 {
+}
+
+void Player::LRunning()
+{
+	PLAY;
+
+	Move();
+	Rotate();
+
+	if (KEY_UP('W') || KEY_UP('S') || KEY_UP('A') || KEY_UP('D'))
+	{
+		if (KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D'))
+			return;
+
+		SetState(L_008);
+		return;
+	}
+
+	if (RATIO < 0.6)
+		Rotate();
+
+	if (RATIO > 0.94 && (KEY_PRESS('W') || KEY_PRESS('S') || KEY_PRESS('A') || KEY_PRESS('D')))
+	{
+		SetState(L_004);
+		return;
+	}
+
+	if (RATIO > 0.98)
+	{
+		ReturnIdle();
+	}
+
+	if (KEY_DOWN(VK_SPACE))
+		Roll();
 }
 
 void Player::MotionRotate(float degree)
