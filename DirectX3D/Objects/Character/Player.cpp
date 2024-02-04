@@ -626,29 +626,48 @@ void Player::RecordLastPos()
 	Pos() = GetTranslationByNode(1);
 }
 
-void Player::L001()
+void Player::L001() // 발도상태 대기
 {
 	PLAY;
 
 	if (KEY_PRESS('W') || KEY_PRESS('A') || KEY_PRESS('S') || KEY_PRESS('D'))
 		SetState(L_005);
 
-	if (KEY_DOWN(VK_LBUTTON))
+	// 101 내디뎌 베기
+	if (KEY_FRONT(Keyboard::LMB))
+	{
 		SetState(L_101);
-
+		return;
+	}
+	// 104 찌르기
+	if (KEY_FRONT(Keyboard::RMB))
+	{
+		SetState(L_104);
+		return;
+	}
+	// 103 베어내리기
+	if (KEY_FRONT(Keyboard::LMBRMB))
+	{
+		SetState(L_103);
+		return;
+	}
+	if (KEY_DOWN(VK_LSHIFT))
+		SetState(L_106);
 	if (KEY_DOWN(VK_SPACE))
 		Roll();
 }
 
-void Player::L002()
+void Player::L002() // 발도
 {
+	PLAY;
 }
 
-void Player::L003()
+void Player::L003() // 서서 납도
 {
+	PLAY;
 }
 
-void Player::L004()
+void Player::L004() // 발도상태 걷기 중
 {
 	PLAY;
 	//
@@ -668,6 +687,18 @@ void Player::L004()
 	if (KEY_FRONT(Keyboard::LMB))
 	{		
 		SetState(L_101);		
+		return;
+	}
+	// 104 찌르기
+	if (KEY_FRONT(Keyboard::RMB))
+	{
+		SetState(L_104);
+		return;
+	}
+	// 103 베어내리기
+	if (KEY_FRONT(Keyboard::LMBRMB))
+	{
+		SetState(L_103);
 		return;
 	}
 
@@ -693,7 +724,7 @@ void Player::L004()
 	}
 }
 
-void Player::L005()
+void Player::L005() // 발도상태 걷기 시작 (발돋움)
 {
 	PLAY;
 
@@ -726,15 +757,15 @@ void Player::L005()
 		Roll();
 }
 
-void Player::L006()
+void Player::L006() // 더미
 {
 }
 
-void Player::L007()
+void Player::L007() // 더미
 {
 }
 
-void Player::L008()
+void Player::L008() // 멈춤
 {
 	PLAY;
 
@@ -760,11 +791,12 @@ void Player::L008()
 	}
 }
 
-void Player::L009()
+void Player::L009() // 걸으면서 납도
 {
+	PLAY;
 }
 
-void Player::L010()
+void Player::L010() // 구르기
 {
 	PLAY;
 
@@ -778,7 +810,7 @@ void Player::L010()
 	}
 }
 
-void Player::L101()
+void Player::L101() // 내디뎌베기
 {
 	// PlayClip 하는데 계속 반복해서 호출되면 모션 반복되니까 방지 + 딱 한번만 실행되는거 놓기
 	if (INIT)
@@ -820,7 +852,7 @@ void Player::L101()
 
 }
 
-void Player::L102()
+void Player::L102() // 세로베기
 {
 	if (INIT)
 	{
@@ -890,7 +922,7 @@ void Player::L103() // 베어내리기
 	}
 }
 
-void Player::L104()
+void Player::L104() // 찌르기
 {
 	PLAY;
 
