@@ -458,6 +458,13 @@ void Player::Rotate()
 	newForward = Lerp(Forward(), CAM->Back(), rotSpeed * DELTA);
 	float rot = atan2(newForward.x, newForward.z);
 	//Rot().y = rot;
+
+
+	//캐릭터 기준 왼쪽 법선
+	//newForward = Cross(forward, CAMBack);
+	//float rot = atan2(newForward.x, newForward.z);
+	//Rot().y = rot;
+
 }
 
 void Player::Attack() // 충돌판정 함수
@@ -491,41 +498,59 @@ void Player::Roll()
 
 	Vector3 forward = Back();
 
+	Vector3 newForward;
+	//Rot().y = rot;
 	if (KEY_PRESS('W'))
 	{
-		Rot().y;
+		newForward = Lerp(Forward(), CAM->Back(), rotSpeed * 10);
+		float rot = atan2(newForward.x, newForward.z);
+		Rot().y = rot;
 	}
 	if (KEY_PRESS('S'))
 	{
-		Rot().y;
+		newForward = Lerp(Back(), CAM->Forward(), rotSpeed * 10);
+		float rot = atan2(newForward.x, newForward.z);
+		Rot().y = rot;
 	}
 	if (KEY_PRESS('A'))
 	{
-		Rot().y;
+		newForward = Lerp(Left(), CAM->Right(), rotSpeed * 10);
+		float rot = atan2(newForward.x, newForward.z);
+		Rot().y = rot;
 	}
 	if (KEY_PRESS('D'))
 	{
-		Rot().y;
+		newForward = Lerp(Right(), CAM->Left(), rotSpeed * 10);
+		float rot = atan2(newForward.x, newForward.z);
+		Rot().y = rot;
 	}
 	if (KEY_PRESS('W') && KEY_PRESS('A') || KEY_PRESS('A') && KEY_PRESS('W')) // 좌상 구르기
 	{
-		Rot().y = CAMLeftForward.y;
+		newForward = Lerp(Left()+Forward(), CAMLeftForward, rotSpeed * 10);
+		float rot = atan2(newForward.x, newForward.z);
+		Rot().y = rot;
 	}
 	if (KEY_PRESS('W') && KEY_PRESS('D') || KEY_PRESS('D') && KEY_PRESS('W')) // 우상 구르기
 	{
-		Rot().y = CAMRightForward.y;
+		newForward = Lerp(Right()+Forward(), CAMRightForward, rotSpeed * 10);
+		float rot = atan2(newForward.x, newForward.z);
+		Rot().y = rot;
 	}
 	if (KEY_PRESS('S') && KEY_PRESS('A') || KEY_PRESS('A') && KEY_PRESS('S')) // 좌하 구르기
 	{
-		Rot().y = CAMLeftBack.y;
+		newForward = Lerp(Left()+Back(), CAMLeftBack, rotSpeed * 10);
+		float rot = atan2(newForward.x, newForward.z);
+		Rot().y = rot;
 	}
 	if (KEY_PRESS('S') && KEY_PRESS('D') || KEY_PRESS('D') && KEY_PRESS('S')) // 우하 구르기
 	{
-		Rot().y = CAMRightBack.y;
+		newForward = Lerp(Right()+Back(), CAMRightBack, rotSpeed * 10);
+		float rot = atan2(newForward.x, newForward.z);
+		Rot().y = rot;
 	}
-
-
 	SetState(L_010);
+
+
 }
 
 void Player::SetState(State state)
