@@ -100,6 +100,7 @@ private:
 	Transform* realPos = nullptr;
 	Transform* lastPos = nullptr;
 	Transform* head = nullptr;
+	Transform* back = nullptr;
 
 	SphereCollider* tmpCollider = nullptr;
 	CapsuleCollider* swordCollider = nullptr;
@@ -134,7 +135,8 @@ private:
 	int kunaiIndex = 0;
 
 
-	int node = 84;
+	int node = 197;
+	float rotation = -1.5;
 
 	float camRot;
 	float rad;

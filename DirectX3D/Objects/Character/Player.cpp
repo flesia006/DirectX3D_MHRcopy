@@ -15,14 +15,19 @@ Player::Player() : ModelAnimator("Player")
 	realPos = new Transform();
 	lastPos = new Transform();
 	root = new Transform();
+	back = new Transform();
 	longSword = new Model("longSwd");
-	longSword->SetParent(mainHand);
+	longSword->SetParent(back);
+	
+	longSword->Rot().x -= XM_PIDIV2;
+	
 
 	particle = new Spark(L"Textures/Effect/Rain.png", true);
 
 	tmpCollider = new SphereCollider();
-	tmpCollider->Scale() *= 3.0f;
-	tmpCollider->SetParent(head);
+	tmpCollider->Scale() *= 6.0f;
+//	tmpCollider->SetParent(head);
+//	tmpCollider->SetParent(back);
 
 	ReadClips();
 
@@ -44,19 +49,26 @@ void Player::Update()
 	ResetPlayTime();
 
 	if (curState != S_003);
-	mainHand->SetWorld(GetTransformByNode(108));
+		mainHand->SetWorld(GetTransformByNode(108));
 	if(curState==S_003)
 		mainHand->SetWorld(GetTransformByNode(35));
 
 	realPos->Pos() = GetTranslationByNode(1);	
-	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
-	ModelAnimator::Update();
 
+	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
+
+	back->SetWorld(GetTransformByNode(node));
+
+
+	tmpCollider->Pos() = GetTranslationByNode(node);
+
+	ModelAnimator::Update();
 	root->UpdateWorld();
 	realPos->UpdateWorld();
 	lastPos->UpdateWorld();
 	longSword->UpdateWorld();
 	head->UpdateWorld();
+	back->UpdateWorld();
 	tmpCollider->UpdateWorld();
 	swordCollider->UpdateWorld();
 }
@@ -79,12 +91,12 @@ void Player::GUIRender()
 
 //	Vector3 Forward = root->Forward();
 //	float t = atan2(Forward.x, Forward.z);
-	float t = root->Rot().y;
-	ImGui::DragFloat("Player.y", &t); 
-
-	Vector3 CAMForward = CAM->Forward();	
-	float y = atan2(CAMForward.x, CAMForward.z);
-	ImGui::DragFloat("CAM.y", &y);
+//	float t = root->Rot().y;
+//	ImGui::DragFloat("Player.y", &t); 
+//
+//	Vector3 CAMForward = CAM->Forward();	
+//	float y = atan2(CAMForward.x, CAMForward.z);
+//	ImGui::DragFloat("CAM.y", &y);
 
 	//Vector3 pos = realPos->Pos();
 	//
@@ -94,7 +106,8 @@ void Player::GUIRender()
 	//ImGui::SliderInt("keyboard", &U, 0, 200);
 	//
 	//
-	//ImGui::SliderInt("node", &node, 0, 100);
+	ImGui::SliderInt("node", &node, 100, 300);
+	ImGui::SliderFloat("rotation", &rotation, 0, 20.0f);
 
 
 	longSword->GUIRender();
