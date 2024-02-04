@@ -23,6 +23,7 @@ private:
 
     Shadow* shadow;
 
+    SkyBox* skyBox;
     LightBuffer::Light* light; //빛 사용하기
 };
 

@@ -14,7 +14,8 @@ private:
 		L_105, L_106, L_107, L_108, L_109, 
 		L_110, L_111, L_112, L_113,	L_114, 
 		L_115, L_116, L_117, L_118,	L_119, 
-		L_120, L_121, L_122, L_123,
+		L_120, L_121, L_122, L_123, S_003,
+		S_008, S_009
 	};
 
 	enum Rotation
@@ -44,6 +45,7 @@ private:
 	void Rotate();
 	void Attack(); // TODO :  인자로 모션 배율 넣기
 	void SetAnimation();
+	void Roll();
 
 	void SetState(State state);
 	void Throw();
@@ -62,7 +64,9 @@ private:
 		GetClip(L_001)->ResetPlayTime();
 		SetState(L_001);
 	}		
-
+	void S003();
+	void S008();
+	void S009();
 	
 	void L001(); 
 
@@ -89,6 +93,7 @@ private:
 	void L109();
 	void L110();
 
+	void LRunning();
 private:
 	Transform* mainHand = nullptr;
 	Transform* root = nullptr;
@@ -135,6 +140,8 @@ private:
 	float rad;
 
 	int loopApply = 334;
+
+
 
 };
 

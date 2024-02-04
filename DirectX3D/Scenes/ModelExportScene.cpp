@@ -13,7 +13,9 @@ ModelExportScene::ModelExportScene()
     exporter->ExportMesh();
     delete exporter;    
     
-    ExportAnimation("L_005_NoMove", name);
+    ExportAnimation("S_003", name);
+    ExportAnimation("S_008", name);
+    ExportAnimation("S_009", name);
 //    ExportAnimation("L_127", name);
 //    ExportAnimation("L_128", name);
 //    ExportAnimation("L_130", name);
