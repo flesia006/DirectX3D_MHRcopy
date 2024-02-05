@@ -160,6 +160,7 @@ using namespace GameMath;
 #include "Objects/Basic/Cube.h"
 #include "Objects/Basic/Sphere.h"
 #include "Objects/Basic/Cylinder.h"
+#include "Objects/Basic/ColorRect.h"
 
 #include "Objects/Character/Item/Kunai.h"
 #include "Objects/Character/Human.h"

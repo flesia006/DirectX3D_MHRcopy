@@ -41,10 +41,10 @@ struct VertexColor
         color = { 1, 1, 1, 1 };
     }
 
-    VertexColor(float x, float y, float z, float r, float g, float b)
+    VertexColor(float x, float y, float z, float r, float g, float b, float a)
     {
         pos = { x, y, z };
-        color = { r, g, b, 1 };
+        color = { r, g, b, a };
     }
 };
 

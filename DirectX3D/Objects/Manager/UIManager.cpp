@@ -13,8 +13,20 @@ UIManager::UIManager()
 	durability_gauge = new Quad(L"Textures/UI/Durability_Gauge.png");
 	durability_gauge->Pos() = { 200,600,0 };
 
-	hpBar = new Quad(L"Textures/UI/HpBar.png");
-	hpBar->Pos() = { 140,650,0 };
+	hpBar1 = new Quad(L"Textures/UI/HpBar_noColor1_2.png");
+	hpBar1->Pos() = { 355,650,0 };
+
+	
+	blackBar = new ColorRect(Vector2(447, 10), Float4(0, 0, 0, 0.5f));
+	blackBar->Pos() = { 131, 650, 0 };
+
+	redBar = new ColorRect(Vector2(447, 10), Float4(0.52, 0.05, 0.09, 1));
+	redBar ->Pos() = { 131, 650, 0 };
+
+	greenBar = new ColorRect(Vector2(447, 10), Float4(0.49f, 0.92f, 0.55f, 1));
+	greenBar->Pos() = { 131, 650, 0 };
+
+	originGreenBarScale = greenBar->Scale();
 
 	idBar = new Quad(L"Textures/UI/IDBar.png");
 	idBar->Pos() = { 220,680,0 };
@@ -53,7 +65,9 @@ UIManager::~UIManager()
 	delete clockFrame;
 	delete durability;
 	delete durability_gauge;
-	delete hpBar;
+	delete hpBar1;
+
+
 	delete idBar;
 	delete itemSlot;
 	delete lsCoting;
@@ -68,7 +82,11 @@ UIManager::~UIManager()
 void UIManager::Update()
 {
 	durability_gauge->UpdateWorld();
-	hpBar->UpdateWorld();
+	hpBar1->UpdateWorld();
+	blackBar->UpdateWorld();
+	redBar->UpdateWorld();
+	greenBar->UpdateWorld();
+
 	lsCoting->UpdateWorld();
 	lsCoting2->UpdateWorld();
 	lsGauge2->UpdateWorld();
@@ -81,7 +99,12 @@ void UIManager::PostRender()
 	clockFrame->Render();
 	durability->Render();
 	durability_gauge->Render();
-	hpBar->Render();
+
+	//blackBar->Render();
+	//redBar->Render();
+	greenBar->Render();
+	hpBar1->Render();
+
 	idBar->Render();
 	itemSlot->Render();
 	lsCoting->Render();

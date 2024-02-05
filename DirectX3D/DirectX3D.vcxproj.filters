@@ -300,6 +300,9 @@
     <ClInclude Include="Objects\Particle\Trail.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Objects\Basic\ColorRect.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectX3D.cpp">
@@ -555,6 +558,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Objects\Particle\Trail.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects\Basic\ColorRect.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

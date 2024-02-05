@@ -22,15 +22,12 @@ Player::Player() : ModelAnimator("Player")
 	trail = new Trail(L"Textures/Effect/Snow.png", swordStart, swordEnd, 20, 70);
 
 	longSword = new Model("longSwd");
-	longSword->SetParent(mainHand);
-	
-//	longSword->Rot().x -= XM_PIDIV2;	
+	longSword->SetParent(mainHand);	
 
 	particle = new Spark(L"Textures/Effect/Rain.png", true);
 
 	tmpCollider = new SphereCollider();
 	tmpCollider->Scale() *= 6.0f;
-
 
 
 //	tmpCollider->SetParent(head);
@@ -55,7 +52,7 @@ void Player::Update()
 	Control();
 	ResetPlayTime();
 
-	if (curState != S_003);
+	if (curState != S_003)
 		mainHand->SetWorld(GetTransformByNode(108));
 	if(curState==S_003)
 		mainHand->SetWorld(GetTransformByNode(35));
@@ -75,6 +72,10 @@ void Player::Update()
 	trail->Update();
 
 	tmpCollider->Pos() = GetTranslationByNode(node);
+
+	curHP -= minusHP * DELTA;
+	if (curHP > 0) 
+		UIManager::Get()->SetGreenGauge(curHP / maxHP);
 
 	ModelAnimator::Update();
 	root->UpdateWorld();

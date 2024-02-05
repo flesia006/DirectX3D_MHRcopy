@@ -114,6 +114,7 @@ private:
 	LightBuffer::Light* light; 
 	Trail* trail;
 
+private:
 	State curState = L_101;
 	State preState = L_101;
 
@@ -128,15 +129,9 @@ private:
 	Vector3 prevMousePos = Vector3();
 	Vector3 prevPos = Vector3();
 
-
 	bool isTarget = true;
 
 	POINT clientCenterPos = { WIN_WIDTH / 2, WIN_HEIGHT >> 1 };
-
-	Quad* crosshair = nullptr;
-
-	int kunaiIndex = 0;
-
 
 	int node = 197;
 	float rotation = -1.5;
@@ -146,7 +141,9 @@ private:
 
 	int loopApply = 334;
 
+	float maxHP = 150.0f;
+	float curHP = 150.0f;
 
-
+	float minusHP = 10.1f;
 };
 
