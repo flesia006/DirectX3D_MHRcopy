@@ -44,7 +44,7 @@ void Player::Update()
 	if (curState != S_003);
 	mainHand->SetWorld(GetTransformByNode(108));
 	if(curState==S_003)
-		mainHand->SetWorld(GetTransformByNode(35));
+		mainHand->SetWorld(GetTransformByNode(90));
 
 	realPos->Pos() = GetTranslationByNode(1);	
 	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
@@ -146,6 +146,7 @@ void Player::PostRender()
 	strStatus.push_back("L_109 기인큰회전베기");
 	strStatus.push_back("L_110 기인내디뎌베기");
 	strStatus.push_back("L_111 일자베기");
+
 	strStatus.push_back("S_003 납도 달리기");
 	strStatus.push_back("S_008 제자리 납도");
 	strStatus.push_back("S_009 걸으면서 납도");
