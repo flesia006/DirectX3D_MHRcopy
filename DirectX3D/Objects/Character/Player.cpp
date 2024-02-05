@@ -55,7 +55,7 @@ void Player::Update()
 	if (curState != S_003)
 		mainHand->SetWorld(GetTransformByNode(108));
 	if(curState==S_003)
-		mainHand->SetWorld(GetTransformByNode(35));
+		mainHand->SetWorld(GetTransformByNode(90));
 
 	realPos->Pos() = GetTranslationByNode(1);	
 
@@ -185,6 +185,7 @@ void Player::PostRender()
 	strStatus.push_back("L_109 기인큰회전베기");
 	strStatus.push_back("L_110 기인내디뎌베기");
 	strStatus.push_back("L_111 일자베기");
+
 	strStatus.push_back("S_003 납도 달리기");
 	strStatus.push_back("S_008 제자리 납도");
 	strStatus.push_back("S_009 걸으면서 납도");
@@ -323,6 +324,7 @@ void Player::Move()
 	bool isMoveZ = false; // 전후 이동 중 아님
 	bool isMoveX = false; // 좌우 이동 중 아님
 
+	
 
 	if (KEY_PRESS('W'))
 	{
@@ -462,6 +464,34 @@ void Player::Move()
 		}
 	}
 	if (KEY_PRESS('D') && KEY_PRESS('S') || KEY_PRESS('S') && KEY_PRESS('D'))
+	{
+		Vector3 cross = Cross(forward, CAMRightBack);
+
+		if (cross.y < 0)
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+
+	if (KEY_PRESS('W') && KEY_PRESS('S') || KEY_PRESS('S') && KEY_PRESS('W'))
+	{
+		Vector3 cross = Cross(forward, CAMRightBack);
+
+		if (cross.y < 0)
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+
+	if (KEY_PRESS('D') && KEY_PRESS('A') || KEY_PRESS('A') && KEY_PRESS('D'))
 	{
 		Vector3 cross = Cross(forward, CAMRightBack);
 
