@@ -93,6 +93,7 @@ void ShadowScene::Render()
 void ShadowScene::PostRender()
 {
     //shadow->PostRender(); // Äõµå Ãâ·Â¿ë
+    player->PostRender();
     UIManager::Get()->PostRender();
 }
 

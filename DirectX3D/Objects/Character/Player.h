@@ -1,6 +1,7 @@
 #pragma once
 
 class Particle;
+class Trail;
 class Player : public ModelAnimator
 {
 private:
@@ -18,6 +19,10 @@ private:
 		S_008, S_009
 	};
 
+	enum Rotation
+	{
+		ºÏ, ºÏµ¿, µ¿, ³²µ¿, ³², ³²¼­, ¼­, ºÏ¼­		 
+	};
 
 
 public:
@@ -26,6 +31,7 @@ public:
 
 
 	void Update();
+	void UpdateWorlds();
 	void PreRender();
 	void Render();
 	void GUIRender();
@@ -64,8 +70,6 @@ private:
 	void S009();
 	
 	void L001(); 
-
-
 	void L002();
 	void L003();
 	void L004();
@@ -95,6 +99,10 @@ private:
 	Transform* realPos = nullptr;
 	Transform* lastPos = nullptr;
 	Transform* head = nullptr;
+	Transform* back = nullptr;
+
+	Transform* swordStart = nullptr;
+	Transform* swordEnd = nullptr;
 
 	SphereCollider* tmpCollider = nullptr;
 	CapsuleCollider* swordCollider = nullptr;
@@ -104,6 +112,7 @@ private:
 	Shadow* shadow;
 	Particle* particle;
 	LightBuffer::Light* light; 
+	Trail* trail;
 
 	State curState = L_101;
 	State preState = L_101;
@@ -129,7 +138,8 @@ private:
 	int kunaiIndex = 0;
 
 
-	int node = 84;
+	int node = 197;
+	float rotation = -1.5;
 
 	float camRot;
 	float rad;

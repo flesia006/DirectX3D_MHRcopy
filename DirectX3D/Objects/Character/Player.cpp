@@ -14,14 +14,27 @@ Player::Player() : ModelAnimator("Player")
 	head = new Transform();
 	realPos = new Transform();
 	lastPos = new Transform();
+	root = new Transform();
+	back = new Transform();
+
+	swordStart = new Transform();
+	swordEnd   = new Transform();
+	trail = new Trail(L"Textures/Effect/Snow.png", swordStart, swordEnd, 20, 70);
+
 	longSword = new Model("longSwd");
 	longSword->SetParent(mainHand);
+	
+//	longSword->Rot().x -= XM_PIDIV2;	
 
 	particle = new Spark(L"Textures/Effect/Rain.png", true);
 
 	tmpCollider = new SphereCollider();
-	tmpCollider->Scale() *= 3.0f;
-	tmpCollider->SetParent(head);
+	tmpCollider->Scale() *= 6.0f;
+
+
+
+//	tmpCollider->SetParent(head);
+//	tmpCollider->SetParent(back);
 
 	ReadClips();
 
@@ -41,51 +54,76 @@ void Player::Update()
 {
 	Control();
 	ResetPlayTime();
+
 	if (curState != S_003);
-	mainHand->SetWorld(GetTransformByNode(108));
+		mainHand->SetWorld(GetTransformByNode(108));
 	if(curState==S_003)
 		mainHand->SetWorld(GetTransformByNode(90));
 
 	realPos->Pos() = GetTranslationByNode(1);	
+
 	head->Pos() = realPos->Pos() + Vector3::Up() * 200;
 
+	back->SetWorld(GetTransformByNode(node));
+
+	swordStart->Pos() = longSword->GlobalPos() + longSword->Back() * 271.0f; // 20.0f : 10% 크기 반영
+	swordEnd->Pos() = longSword->GlobalPos() + longSword->Back() * 260.0f;
+
+	swordStart->UpdateWorld();
+	swordEnd->UpdateWorld();
+
+	trail->Update();
+
+	tmpCollider->Pos() = GetTranslationByNode(node);
+
+	ModelAnimator::Update();
+	root->UpdateWorld();
 	realPos->UpdateWorld();
 	lastPos->UpdateWorld();
-	ModelAnimator::Update();
 	longSword->UpdateWorld();
 	head->UpdateWorld();
+	back->UpdateWorld();
 	tmpCollider->UpdateWorld();
 	swordCollider->UpdateWorld();
-	particle->Update();
 }
 
 void Player::Render()
 {
 	ModelAnimator::Render();
 	tmpCollider->Render();
-	swordCollider->Render();
+//	swordCollider->Render();
 	longSword->Render();
 
 	particle->Render();
-
+	trail->Render();
 }
 
 void Player::GUIRender()
 {
-	ModelAnimator::GUIRender();
+//	ModelAnimator::GUIRender();
 	particle->GUIRender();
+	trail->GetMaterial()->GUIRender();
+	//particle->GetMaterial()->GUIRender();
 
-	float t = GetClip(L_004)->GetPlaytime();
-	ImGui::DragFloat("pt_0", &t); 
-	Vector3 pos = realPos->Pos();
+//	Vector3 Forward = root->Forward();
+//	float t = atan2(Forward.x, Forward.z);
+//	float t = root->Rot().y;
+//	ImGui::DragFloat("Player.y", &t); 
+//
+//	Vector3 CAMForward = CAM->Forward();	
+//	float y = atan2(CAMForward.x, CAMForward.z);
+//	ImGui::DragFloat("CAM.y", &y);
 
-	ImGui::DragFloat3("RealPos", (float*)&pos);
-
-	int U = Keyboard::Get()->ReturnFirst();
-	ImGui::SliderInt("keyboard", &U, 0, 200);
-
-
-	ImGui::SliderInt("node", &node, 0, 100);
+	//Vector3 pos = realPos->Pos();
+	//
+	//ImGui::DragFloat3("RealPos", (float*)&pos);
+	//
+	//int U = Keyboard::Get()->ReturnFirst();
+	//ImGui::SliderInt("keyboard", &U, 0, 200);
+	//
+	//
+	ImGui::SliderInt("node", &node, 100, 300);
+	ImGui::SliderFloat("rotation", &rotation, 0, 20.0f);
 
 
 	longSword->GUIRender();

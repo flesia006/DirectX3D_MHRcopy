@@ -27,6 +27,8 @@ public:
     virtual void Play(Vector3 pos); // 별도 작성 없으면 부모의 함수가 실행은 되게
     void Stop();                    // 멈춤 기능은 부모를 기본으로
 
+    Material* GetMaterial() { return material; }
+
 protected:
     bool isActive = false; // 트랜스폼이 없어서 활성화 여부는 따로 지정
     UINT particleCount = 0; // 생성시 입자는 없음

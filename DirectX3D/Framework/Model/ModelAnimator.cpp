@@ -143,6 +143,14 @@ Vector3 ModelAnimator::GetTranslationByNode(int nodeIndex)
     return T;
 }
 
+Vector3 ModelAnimator::GetRotationByNode(int nodeIndex)
+{
+    Matrix mat = ModelAnimator::GetTransformByNode(nodeIndex);
+    Vector3 S, R, T;
+    XMMatrixDecompose(S.GetValue(), R.GetValue(), T.GetValue(), mat);
+    return R;
+}
+
 void ModelAnimator::CreateTexture()
 {
     UINT clipCount = clips.size();
