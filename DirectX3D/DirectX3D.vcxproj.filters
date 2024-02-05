@@ -300,6 +300,12 @@
     <ClInclude Include="Objects\Particle\Trail.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Framework\System\Sounds.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Framework\Utilities\String.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectX3D.cpp">
@@ -557,6 +563,12 @@
     <ClCompile Include="Objects\Particle\Trail.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Framework\System\Sounds.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Framework\Utilities\String.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DirectX3D.rc">
@@ -571,6 +583,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="..\..\DirectX2D\DirectX2D\Textures\UI\Cancel.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Textures\Effect\Trail.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
@@ -608,10 +623,12 @@
   <ItemGroup>
     <None Include="Shaders\VertexHeader.hlsli" />
     <None Include="Shaders\PixelHeader.hlsli" />
+    <None Include="Models\FBX\Valphalk.fbx" />
+    <None Include="Models\Materials\Valphalk\Valphalk.mats" />
+    <None Include="Models\Meshes\Valphalk.mesh" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="메모.txt" />
     <Text Include="작업일지.txt" />
-    <Text Include="최원영 작업일지.txt" />
   </ItemGroup>
 </Project>

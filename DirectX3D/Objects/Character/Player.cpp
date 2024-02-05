@@ -323,6 +323,7 @@ void Player::Move()
 	bool isMoveZ = false; // 전후 이동 중 아님
 	bool isMoveX = false; // 좌우 이동 중 아님
 
+	
 
 	if (KEY_PRESS('W'))
 	{
@@ -462,6 +463,34 @@ void Player::Move()
 		}
 	}
 	if (KEY_PRESS('D') && KEY_PRESS('S') || KEY_PRESS('S') && KEY_PRESS('D'))
+	{
+		Vector3 cross = Cross(forward, CAMRightBack);
+
+		if (cross.y < 0)
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+
+	if (KEY_PRESS('W') && KEY_PRESS('S') || KEY_PRESS('S') && KEY_PRESS('W'))
+	{
+		Vector3 cross = Cross(forward, CAMRightBack);
+
+		if (cross.y < 0)
+		{
+			Rot().y += rotSpeed * DELTA;
+		}
+		else if (cross.y > 0)
+		{
+			Rot().y -= rotSpeed * DELTA;
+		}
+	}
+
+	if (KEY_PRESS('D') && KEY_PRESS('A') || KEY_PRESS('A') && KEY_PRESS('D'))
 	{
 		Vector3 cross = Cross(forward, CAMRightBack);
 
