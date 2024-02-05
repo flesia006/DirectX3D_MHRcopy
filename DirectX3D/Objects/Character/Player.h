@@ -1,6 +1,7 @@
 #pragma once
 
 class Particle;
+class Trail;
 class Player : public ModelAnimator
 {
 private:
@@ -69,8 +70,6 @@ private:
 	void S009();
 	
 	void L001(); 
-
-
 	void L002();
 	void L003();
 	void L004();
@@ -102,6 +101,9 @@ private:
 	Transform* head = nullptr;
 	Transform* back = nullptr;
 
+	Transform* swordStart = nullptr;
+	Transform* swordEnd = nullptr;
+
 	SphereCollider* tmpCollider = nullptr;
 	CapsuleCollider* swordCollider = nullptr;
 
@@ -110,6 +112,7 @@ private:
 	Shadow* shadow;
 	Particle* particle;
 	LightBuffer::Light* light; 
+	Trail* trail;
 
 	State curState = L_101;
 	State preState = L_101;

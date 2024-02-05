@@ -297,6 +297,9 @@
     <ClInclude Include="Objects\Particle\Spark.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Objects\Particle\Trail.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DirectX3D.cpp">
@@ -551,6 +554,9 @@
     <ClCompile Include="Objects\Particle\Sprite.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Objects\Particle\Trail.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DirectX3D.rc">
@@ -602,12 +608,10 @@
   <ItemGroup>
     <None Include="Shaders\VertexHeader.hlsli" />
     <None Include="Shaders\PixelHeader.hlsli" />
-    <None Include="Models\FBX\Valphalk.fbx" />
-    <None Include="Models\Materials\Valphalk\Valphalk.mats" />
-    <None Include="Models\Meshes\Valphalk.mesh" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="메모.txt" />
     <Text Include="작업일지.txt" />
+    <Text Include="최원영 작업일지.txt" />
   </ItemGroup>
 </Project>

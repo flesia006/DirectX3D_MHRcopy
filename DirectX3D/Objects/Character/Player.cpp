@@ -16,16 +16,23 @@ Player::Player() : ModelAnimator("Player")
 	lastPos = new Transform();
 	root = new Transform();
 	back = new Transform();
+
+	swordStart = new Transform();
+	swordEnd   = new Transform();
+	trail = new Trail(L"Textures/Effect/Snow.png", swordStart, swordEnd, 20, 70);
+
 	longSword = new Model("longSwd");
-	longSword->SetParent(back);
+	longSword->SetParent(mainHand);
 	
-	longSword->Rot().x -= XM_PIDIV2;
-	
+//	longSword->Rot().x -= XM_PIDIV2;	
 
 	particle = new Spark(L"Textures/Effect/Rain.png", true);
 
 	tmpCollider = new SphereCollider();
 	tmpCollider->Scale() *= 6.0f;
+
+
+
 //	tmpCollider->SetParent(head);
 //	tmpCollider->SetParent(back);
 
@@ -59,6 +66,13 @@ void Player::Update()
 
 	back->SetWorld(GetTransformByNode(node));
 
+	swordStart->Pos() = longSword->GlobalPos() + longSword->Back() * 271.0f; // 20.0f : 10% 크기 반영
+	swordEnd->Pos() = longSword->GlobalPos() + longSword->Back() * 260.0f;
+
+	swordStart->UpdateWorld();
+	swordEnd->UpdateWorld();
+
+	trail->Update();
 
 	tmpCollider->Pos() = GetTranslationByNode(node);
 
@@ -77,17 +91,19 @@ void Player::Render()
 {
 	ModelAnimator::Render();
 	tmpCollider->Render();
-	swordCollider->Render();
+//	swordCollider->Render();
 	longSword->Render();
 
 	particle->Render();
-
+	trail->Render();
 }
 
 void Player::GUIRender()
 {
-	ModelAnimator::GUIRender();
+//	ModelAnimator::GUIRender();
 	particle->GUIRender();
+	trail->GetMaterial()->GUIRender();
+	//particle->GetMaterial()->GUIRender();
 
 //	Vector3 Forward = root->Forward();
 //	float t = atan2(Forward.x, Forward.z);
