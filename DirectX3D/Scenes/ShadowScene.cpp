@@ -34,7 +34,7 @@ ShadowScene::ShadowScene()
 
     skyBox = new SkyBox(L"Textures/Landscape/BlueSky.dds");
     Sounds::Get()->AddSound("Valphalk_Thema", SoundPath + L"Valphalk_Thema.mp3");
-    Sounds::Get()->Play("Valphalk_Thema", 0.3f);    
+    Sounds::Get()->Play("Valphalk_Thema", 0.1f);    
 
 }
 
