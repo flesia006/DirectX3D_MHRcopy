@@ -300,22 +300,14 @@
     <ClInclude Include="Objects\Particle\Trail.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="Objects\Basic\ColorRect.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
+=======
     <ClInclude Include="Framework\System\Sounds.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Utilities\String.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Objects\Particle\ParticleSystem.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scenes\ParticleConfigScene.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Scenes\ParticleScene.h">
+>>>>>>> 86c7b59a0504f6c2513b4c03d1d4a5dc8d661402
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -575,22 +567,14 @@
     <ClCompile Include="Objects\Particle\Trail.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+<<<<<<< HEAD
     <ClCompile Include="Objects\Basic\ColorRect.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
+=======
     <ClCompile Include="Framework\System\Sounds.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Framework\Utilities\String.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Objects\Particle\ParticleSystem.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scenes\ParticleConfigScene.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Scenes\ParticleScene.cpp">
+>>>>>>> 86c7b59a0504f6c2513b4c03d1d4a5dc8d661402
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -607,6 +591,9 @@
       <Filter>리소스 파일</Filter>
     </Image>
     <Image Include="..\..\DirectX2D\DirectX2D\Textures\UI\Cancel.png">
+      <Filter>리소스 파일</Filter>
+    </Image>
+    <Image Include="Textures\Effect\Trail.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>
@@ -644,10 +631,12 @@
   <ItemGroup>
     <None Include="Shaders\VertexHeader.hlsli" />
     <None Include="Shaders\PixelHeader.hlsli" />
+    <None Include="Models\FBX\Valphalk.fbx" />
+    <None Include="Models\Materials\Valphalk\Valphalk.mats" />
+    <None Include="Models\Meshes\Valphalk.mesh" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="메모.txt" />
     <Text Include="작업일지.txt" />
-    <Text Include="최원영 작업일지.txt" />
   </ItemGroup>
 </Project>

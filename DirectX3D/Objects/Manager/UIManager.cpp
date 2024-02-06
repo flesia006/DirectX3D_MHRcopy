@@ -100,8 +100,8 @@ void UIManager::PostRender()
 	durability->Render();
 	durability_gauge->Render();
 
-	blackBar->Render();
-	redBar->Render();
+	//blackBar->Render();
+	//redBar->Render();
 	greenBar->Render();
 	hpBar1->Render();
 

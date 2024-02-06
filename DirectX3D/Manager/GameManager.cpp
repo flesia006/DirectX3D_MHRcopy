@@ -11,8 +11,6 @@
 #include "Scenes/IntancingScene.h"
 #include "Scenes/GameScene.h"
 #include "Scenes/ShadowScene.h"
-#include "Scenes/ParticleScene.h"
-#include "Scenes/ParticleConfigScene.h"
 
 // 과제
 // 1. npc 의 매니저화
@@ -26,7 +24,7 @@ GameManager::GameManager()
 {     
     Create();
 
-      SceneManager::Get()->Create("Grid", new GridScene());
+    //SceneManager::Get()->Create("Grid", new GridScene());
 //    SceneManager::Get()->Create("ModelExport", new ModelExportScene());
 //    SceneManager::Get()->Add("ModelExport");
 
@@ -38,16 +36,12 @@ GameManager::GameManager()
 //    SceneManager::Get()->Create("ModelAnimationScene", new ModelAnimationScene());
 //    SceneManager::Get()->Create("Instancing", new IntancingScene());
 //    SceneManager::Get()->Create("game", new GameScene());
-//    SceneManager::Get()->Create("shadow", new ShadowScene());
-      SceneManager::Get()->Create("ParticleConfig", new ParticleConfigScene());
-//    SceneManager::Get()->Create("ParticleScene", new ParticleScene());
+    SceneManager::Get()->Create("shadow", new ShadowScene());
 
-
-      SceneManager::Get()->Add("Grid");
+//    SceneManager::Get()->Add("Grid");
 //    SceneManager::Get()->Add("Instancing");
 //    SceneManager::Get()->Add("game");
-//    SceneManager::Get()->Add("shadow");
-      SceneManager::Get()->Add("ParticleConfig");
+    SceneManager::Get()->Add("shadow");
 }
 
 GameManager::~GameManager()

@@ -178,7 +178,6 @@ using namespace GameMath;
 #include "Objects/Particle/Spark.h"
 #include "Objects/Particle/Sprite.h"
 #include "Objects/Particle/Trail.h"
-#include "Objects/Particle/ParticleSystem.h"
 
 #include "Objects/Manager/BlockManager.h"
 #include "Objects/Manager/RobotManager.h"
